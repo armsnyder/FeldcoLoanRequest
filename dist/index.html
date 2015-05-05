@@ -21,11 +21,15 @@
   <script src="/components/supersonic/supersonic.js"></script>
   <script src="/components/webcomponentsjs/webcomponents.js"></script>
 
-  <script src="/scripts/application.js"></script>
+  <script src="app.js"></script>
+  <script src="applicationForm/applicationFormController.js"></script>
+  <script src="applicationStatus/applicationStatusController.js"></script>
+  <script src="applicationStatus/bankRequestService.js"></script>
+  <script src="login/loginController.js"></script>
 </head>
-<body ng-app="SteroidsApplication">
+<body ng-app="FeldcoLoanRequest">
 
-<div class="padding" ng-controller="IndexController">
+<div class="padding">
 
   <super-navbar>
     <super-navbar-title ng-bind="navbarTitle">
