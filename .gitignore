@@ -1,2 +1,9 @@
 # sass cache
 www/stylesheets/.sass-cache
+/dist
+node_modules
+bower_components
+.sass-cache/
+logs/
+config/cloud.json
+/.idea
