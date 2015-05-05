@@ -1,0 +1,3 @@
+angular.module('FeldcoLoanRequest', [
+    'supersonic'
+]);
