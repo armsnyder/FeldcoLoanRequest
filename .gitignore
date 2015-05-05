@@ -1,9 +1,8 @@
 # sass cache
-www/stylesheets/.sass-cache
-/dist
+www/stylesheets/.sass-cache/
+dist/
 node_modules
 bower_components
 .sass-cache/
 logs/
-/.idea
-／.sass-cache
+.idea/

@@ -20,7 +20,7 @@ angular.module('FeldcoLoanRequest').factory('BankRequestService', function($q, s
             var correctFormat = typeof requestObject == 'object' && 'bank' in requestObject
                 && 'creditScore' in requestObject && requestObject.bank in banks;
             setTimeout(function() {
-                if (corectFormat) {
+                if (correctFormat) {
                     if (requestObject.creditScore > banks[requestObject.bank].minCreditScore) {
                         resolve({approved: true});
                     } else {
