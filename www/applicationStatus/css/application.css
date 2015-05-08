@@ -1,0 +1,58 @@
+/************
+ * Partials *
+ ************/
+/**************
+ * Typography *
+ **************/
+/**********
+ * Colors *
+ **********/
+/***********
+ * Modules *
+ ***********/
+/************
+ * Partials *
+ ************/
+main.application-status {
+  width: 100%;
+  overflow: auto; }
+  main.application-status h1 {
+    background-color: #4DA0ED; }
+  main.application-status ul.banks {
+    float: left;
+    margin-right: 20px;
+    width: 60%; }
+    main.application-status ul.banks li {
+      display: block;
+      overflow: auto; }
+      main.application-status ul.banks li h3 {
+        float: left;
+        padding: 5px 8px;
+        color: blue;
+        border: 1px solid #444;
+        border-radius: 4px; }
+      main.application-status ul.banks li span {
+        float: left;
+        padding: 5px 8px;
+        color: blue;
+        border: 1px solid #444;
+        border-radius: 4px; }
+  main.application-status ul.tools {
+    float: left;
+    width: 30%;
+    border: 1px solid #444;
+    border-radius: 4px; }
+
+/***********
+ * Globals *
+ ***********/
+html, body, div, span, h1, h2, h3, h4,
+h5, h6, p, a, img, i, ol, ul, li, form,
+label, table, caption {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  font-family: Arial, sans-serif; }
+
+/*# sourceMappingURL=application.css.map */
