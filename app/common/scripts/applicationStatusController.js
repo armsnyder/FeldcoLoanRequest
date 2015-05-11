@@ -1,6 +1,6 @@
-angular.module('FeldcoLoanRequest').controller('ApplicationStatusController', function($scope, supersonic, BankRequestService) {
+angular.module('common').controller('ApplicationStatusController', function($scope, supersonic, BankRequestService, FormService) {
     $scope.approvals = [0, 0, 0];
-    $scope.creditScore = 800;
+    $scope.creditScore = 800*FormService.forms.creditForm.income/100000;
     $scope.init = function() {
         requestObject = {bank: 'internal', creditScore: $scope.creditScore};
         BankRequestService.submitRequest(requestObject).then(function(result) {

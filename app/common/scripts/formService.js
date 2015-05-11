@@ -1,9 +1,11 @@
 angular
-    .module('FeldcoLoanRequest')
+    .module('common')
     .factory('FormService', function($q, supersonic) {
-        var forms = {
-            creditForm : {},
+        var factory = {};
+
+        factory.forms = {
+            creditForm : {}
         };
 
-        return forms
+        return factory;
 });

@@ -1,4 +1,4 @@
-angular.module('FeldcoLoanRequest').factory('BankRequestService', function($q, supersonic) {
+angular.module('common').factory('BankRequestService', function($q, supersonic) {
     var factory = {};
     var banks = {
         // Placeholder bank statistics used in placeholder algorithm
