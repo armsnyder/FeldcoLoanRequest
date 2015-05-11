@@ -14,7 +14,7 @@
  * Partials *
  ************/
 main.login section.banner {
-  margin-top: 90px;
+  margin-top: 130px;
   width: 100%;
   text-align: center; }
   main.login section.banner h1 {
@@ -24,22 +24,26 @@ main.login section.banner {
     margin: 10px 0;
     width: 150px; }
   main.login section.banner form {
-    margin: 0 auto;
-    width: 200px;
-    border: 1px solid #bbb;
-    border-radius: 3px; }
+    width: 100%; }
     main.login section.banner form input {
       display: block;
+      margin: 0 auto;
       padding: 3px 7px;
-      width: 100%;
-      border: none; }
+      width: 250px;
+      border: none;
+      border: 1px solid #bbb;
+      border-style: solid solid none solid;
+      border-radius: 0; }
     main.login section.banner form input:first-child {
       border-bottom: 1px solid #bbb;
-      border-radius: 0; }
+      border-radius: 3px 3px 0 0; }
     main.login section.banner form input:last-child {
+      padding: 8px 0;
+      font-weight: bold;
       color: #fff;
       background-color: #2D8A3F;
-      border-radius: 0; }
+      border: none;
+      border-radius: 0 0 3px 3px; }
 
 /***********
  * Globals *
