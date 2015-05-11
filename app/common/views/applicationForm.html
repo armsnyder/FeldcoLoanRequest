@@ -12,14 +12,14 @@
 				<li>
 					<label>TOTAL AMOUNT FOR CONTRACTS</label>
 					<div class="inputs">
-						$<input type="text" placeholder="15,000.00" ng-model="formInfo.totalAmount">
+						<input type="text" placeholder="$15,000.00" ng-model="formInfo.totalAmount">
 					</div>
 					<hr>
 				</li>
 				<li>
 					<label>LOAN AMOUNT</label>
 					<div class="inputs">
-						$<input type="text" placeholder="12,000.00" ng-model="formInfo.loanAmount">
+						<input type="text" placeholder="$12,000.00" ng-model="formInfo.loanAmount">
 					</div>
 					<hr>
 				</li>
@@ -65,9 +65,10 @@
 				<li>
 					<label>OWN PROPERTY</label>
 					<div class="inputs">
-						<input type="radio" ng-model="formInfo.property" ng-value="true" />Yes
-						<input type="radio" ng-model="formInfo.property" ng-value="false" />No
+						<input type="radio" ng-model="formInfo.property" ng-value="true" /><span>Yes</span>
+						<input type="radio" ng-model="formInfo.property" ng-value="false" /><span>No</span>
 					</div>
+					<hr>
 				</li>
 				<li>
 					<label>YEAR IN HOUSE</label>
@@ -93,11 +94,11 @@
 				<li>
 					<label>ANNUAL INCOME</label>
 					<div class="inputs">
-						$<input type="text" placeholder="100,000.00" ng-model="formInfo.income">
+						<input type="text" placeholder="$100,000.00" ng-model="formInfo.income">
 					</div>
 					<hr>
 				</li>
-				<li>
+				<li class="submit">
 					<input type="submit" ng-click="submit(formInfo)" value="Submit" />
 				</li>
 			</ul>

@@ -19,22 +19,24 @@ main.login {
 			input {
 				display: block;
 				margin: 0 auto;
-				padding: 3px 7px;
+				padding: 15px 20px;
 				width: 250px;
+				background-color: #f5f9f6;
 				border: none;
-				border: 1px solid #bbb;
+				border: 1px solid #dce4e6;
 				border-style: solid solid none solid;
 				border-radius: 0;
+				-webkit-appearance: none; 
+				-moz-appearance: none;
 			}
 			input:first-child {
-				border-bottom: 1px solid #bbb;
 				border-radius: 3px 3px 0 0;
 			}
 			input:last-child {
 				padding: 8px 0;
 				font-weight: bold;
 				color: #fff;
-				background-color: #2D8A3F;
+				background-color: #378ad0;
 				border: none;
 				border-radius: 0 0 3px 3px;
 			}
