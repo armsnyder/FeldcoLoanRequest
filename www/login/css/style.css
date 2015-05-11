@@ -1,26 +1,22 @@
 .wrapper {
   background: #50a3a2;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
+
 .container {
-  max-width: 600px;
+  width: 100%;
   margin: 0 auto;
   padding: 120px 0;
-  height: 400px;
   text-align: center;
 }
 .container h1 {
   font-size: 20px;
-  width: 400px;
+  /*width: 400px;*/
   align: center;
   color: white;
 }
 .container img {
   width: 160px;
-  hight: 160px
 }
 
 
