@@ -66,7 +66,7 @@ main.application-form section.personal-info {
         main.application-form section.personal-info form ul li div.inputs input {
           display: inline;
           vertical-align: top; }
-        main.application-form section.personal-info form ul li div.inputs input[type="text"] {
+        main.application-form section.personal-info form ul li div.inputs input[type="text"], main.application-form section.personal-info form ul li div.inputs input[type="email"] {
           margin-right: 4px;
           padding: 15px 20px;
           width: 150px;
@@ -97,6 +97,10 @@ main.application-form section.personal-info {
     font-weight: bold; }
   main.application-form section.personal-info input {
     background-color: #fff; }
+
+main.application-status section.statuses {
+  margin: 30px auto 30px auto;
+  width: 90%; }
 
 /***********
  * Globals *

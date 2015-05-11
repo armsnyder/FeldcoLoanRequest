@@ -27,7 +27,7 @@ main.application-form {
 							display: inline;
 							vertical-align: top;
 						}
-						input[type="text"] {
+						input[type="text"], input[type="email"] {
 							margin-right: 4px;
 							padding: 15px 20px;
 							width: 150px;
