@@ -1,0 +1,38 @@
+main.application-form {
+
+	section.personal-info {
+		margin: 30px auto 0 auto;
+		width: 600px;
+
+		form {
+
+			ul {
+				list-style: none;
+
+				li {
+					display: block;
+					padding: 20px 0;
+					overflow: auto;
+
+					label {
+						float: left;
+						width: 150px;
+						color: #b5babc;
+					}
+					div.inputs {
+						float: right;
+						width: 340px;
+					}
+				}
+			}
+		}
+
+		label {
+			display: block;
+			font-weight: bold;
+		}
+		input {
+			background-color: #fff;
+		}
+	}
+}

@@ -45,6 +45,28 @@ main.login section.banner {
       border: none;
       border-radius: 0 0 3px 3px; }
 
+main.application-form section.personal-info {
+  margin: 30px auto 0 auto;
+  width: 600px; }
+  main.application-form section.personal-info form ul {
+    list-style: none; }
+    main.application-form section.personal-info form ul li {
+      display: block;
+      padding: 20px 0;
+      overflow: auto; }
+      main.application-form section.personal-info form ul li label {
+        float: left;
+        width: 150px;
+        color: #b5babc; }
+      main.application-form section.personal-info form ul li div.inputs {
+        float: right;
+        width: 340px; }
+  main.application-form section.personal-info label {
+    display: block;
+    font-weight: bold; }
+  main.application-form section.personal-info input {
+    background-color: #fff; }
+
 /***********
  * Globals *
  ***********/

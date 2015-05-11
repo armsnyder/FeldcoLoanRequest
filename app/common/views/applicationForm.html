@@ -1,50 +1,61 @@
-<main class="FeldcoLoanRequest">
-	<span>Credit Application Form</span><br>
+<super-navbar>
+  	<super-navbar-title>Apply</super-navbar-title>
+</super-navbar>
 
-	<label>
-    	<span>Check Account Choice: </span><br>
-    	<input type="radio" ng-model="formInfo.choice" ng-value="true" />Individual
-    	<input type="radio" ng-model="formInfo.choice" ng-value="false" />Joint
-    </label>
 
-    <label>
-	    <span>First Name</span>
-	    <input type="text" placeholder="John" ng-model="formInfo.firstName">
-	</label>
 
-	<label>
-		<span>Middle Initial</span>
-		<input type="text" placeholder="K." ng-model="formInfo.middleInitial">
-	</label>
+<main class="application-form">
 
-	<label>
-		<span>Last Name</span>
-		<input type="text" placeholder="Doe" ng-model="formInfo.lastName">
-	</label>
+	<section class="personal-info">
+		<form>
+			<ul>
+				<li>
+					<label>APPLICATION TYPE</label>
+					<div class="inputs">
+						<input type="radio" ng-model="formInfo.choice" ng-value="true" />Individual
+						<input type="radio" ng-model="formInfo.choice" ng-value="false" />Joint
+					</div>
+					<hr>
+				</li>
+				<li>
+					<label>NAME</label>
+					<div class="inputs">
+						<input type="text" placeholder="First" ng-model="formInfo.firstName">
+						<input type="text" placeholder="Middle Initial" ng-model="formInfo.middleInitial">
+						<input type="text" placeholder="Last" ng-model="formInfo.lastName">
+					</div>
+					<hr>
+				</li>
+				<li>
+					<label>DATE OF BIRTH</label>
+					<div class="inputs">
+						<input type="date" ng-model="formInfo.birthDate">
+					</div>
+					<hr>
+				</li>
+				<li>
+					<labeL>SSN</labeL>
+					<div class="inputs">
+						<input type="text" placeholder="XXXXXXXXX" ng-model="formInfo.lastName">
+					</div>
+					<hr>
+				</li>
+				<li>
+					<label>HOME ADDRESS</label>
+					<div class="inputs">
+						<input type="text" placeholder="" ng-model="formInfo.address">
+					</div>
+					<hr>
+				</li>
+				<li>
+					<label>PROPERTY TYPE</label>
+					<div class="inputs">
+						<input type="radio" ng-model="formInfo.addressType" ng-value="true" />Own
+						<input type="radio" ng-model="formInfo.addressType" ng-value="false" />Rent
+					</div>
+				</li>
+			</ul>
+		</form>
+	</section>
 
-	<label>
-		<span>Date of Birth</span>
-		<input type="date" ng-model="formInfo.birthDate">
-	</label>
-
-	<label>
-		<span>Social Security Number</span>
-		<input type="text" placeholder="XXXXXXXXX" ng-model="formInfo.lastName">
-	</label>
-
-	<label>
-		<span>Physical Street Address</span>
-		<input type="text" placeholder="" ng-model="formInfo.address">
-	</label>
-
-	<label>
-		<span>Physical Street Address</span>
-		<input type="text" placeholder="" ng-model="formInfo.address">
-	</label>
-
-	<label>
-    	<span>Address Type:</span>
-    	<input type="radio" ng-model="formInfo.addressType" ng-value="true" />Own
-    	<input type="radio" ng-model="formInfo.addressType" ng-value="false" />Rent
-    </label>
 </main>
