@@ -10,10 +10,30 @@
 		<form>
 			<ul>
 				<li>
-					<label>APPLICATION TYPE</label>
+					<label>TOTAL AMOUNT FOR CONTRACTS</label>
 					<div class="inputs">
-						<input type="radio" ng-model="formInfo.choice" ng-value="true" />Individual
-						<input type="radio" ng-model="formInfo.choice" ng-value="false" />Joint
+						$<input type="text" placeholder="15,000.00" ng-model="formInfo.totalAmount">
+					</div>
+					<hr>
+				</li>
+				<li>
+					<label>LOAN AMOUNT</label>
+					<div class="inputs">
+						$<input type="text" placeholder="12,000.00" ng-model="formInfo.loanAmount">
+					</div>
+					<hr>
+				</li>
+				<li>
+					<label>BEST CONTACT PHONE</label>
+					<div class="inputs">
+						<input type="text" placeholder="555-555-5555" ng-model="formInfo.phoneBest">
+					</div>
+					<hr>
+				</li>
+				<li>
+					<label>WORK PHONE</label>
+					<div class="inputs">
+						<input type="text" placeholder="555-555-5555" ng-model="formInfo.phoneWork">
 					</div>
 					<hr>
 				</li>
@@ -27,32 +47,58 @@
 					<hr>
 				</li>
 				<li>
-					<label>DATE OF BIRTH</label>
-					<div class="inputs">
-						<input type="date" ng-model="formInfo.birthDate">
-					</div>
-					<hr>
-				</li>
-				<li>
-					<labeL>SSN</labeL>
-					<div class="inputs">
-						<input type="text" placeholder="XXXXXXXXX" ng-model="formInfo.lastName">
-					</div>
-					<hr>
-				</li>
-				<li>
 					<label>HOME ADDRESS</label>
 					<div class="inputs">
-						<input type="text" placeholder="" ng-model="formInfo.address">
+						<input type="text" placeholder="Street" ng-model="formInfo.addressStreet">
+						<input type="text" placeholder="City" ng-model="formInfo.addressCity">
+						<input type="text" placeholder="Zip Code" ng-model="formInfo.addressZipCode">
 					</div>
 					<hr>
 				</li>
 				<li>
-					<label>PROPERTY TYPE</label>
+					<label>YEAR IN HOUSE</label>
 					<div class="inputs">
-						<input type="radio" ng-model="formInfo.addressType" ng-value="true" />Own
-						<input type="radio" ng-model="formInfo.addressType" ng-value="false" />Rent
+						<input type="text" placeholder="12" ng-model="formInfo.yearInHouse">
 					</div>
+					<hr>
+				</li>
+				<li>
+					<label>OWN PROPERTY</label>
+					<div class="inputs">
+						<input type="radio" ng-model="formInfo.property" ng-value="true" />Yes
+						<input type="radio" ng-model="formInfo.property" ng-value="false" />No
+					</div>
+				</li>
+				<li>
+					<label>YEAR IN HOUSE</label>
+					<div class="inputs">
+						<input type="email" placeholder="test@example.com" ng-model="formInfo.email">
+					</div>
+					<hr>
+				</li>
+				<li>
+					<label>EMPLOYER NAME</label>
+					<div class="inputs">
+						<input type="text" placeholder="ABC Dental Inc." ng-model="formInfo.employerName">
+					</div>
+					<hr>
+				</li>
+				<li>
+					<label>YEARS ON JOB</label>
+					<div class="inputs">
+						<input type="text" placeholder="5" ng-model="formInfo.yearsOnJob">
+					</div>
+					<hr>
+				</li>
+				<li>
+					<label>ANNUAL INCOME</label>
+					<div class="inputs">
+						$<input type="text" placeholder="100,000.00" ng-model="formInfo.income">
+					</div>
+					<hr>
+				</li>
+				<li>
+					<input type="submit" ng-click="submit(formInfo)" value="Submit" />
 				</li>
 			</ul>
 		</form>
