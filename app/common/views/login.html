@@ -1,20 +1,18 @@
-<main class="login" ng-controller="LoginController">
+<super-navbar>
+  	<super-navbar-title>Log In</super-navbar-title>
+</super-navbar>
 
-  <title>Login Page</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<main class="login">
 
-  <div class="wrapper">
-	<div class="container">
-		<h1>  Welcome to Feldco Credit Portal</h1>
-    <img src="logo.png">
-		<form class="form">
-			<input type="text" placeholder="Username">
-			<input type="password" placeholder="Password">
-			<button type="submit" id="login-button" onclick="supersonic.ui.initialView.dismiss()" class="button button-block button-balanced">Login</button>
+	<section class="banner">
+		<h1>Feldco Financing Portal</h1>
+		<img src="/img/logo.jpg" />
+		<form>
+			<input type="text" placeholder="username" />
+			<input type="password" placeholder="password" />
+			<input type="submit" onclick="supersonic.ui.initialView.dismiss()" value="Log In" />
 		</form>
-	</div>
-
-</div>
+	</section>
 
 </main>

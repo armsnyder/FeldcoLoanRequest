@@ -1,0 +1,39 @@
+main.login {
+
+	section.banner {
+		margin-top: 90px;
+		width: 100%;
+		text-align: center;
+
+		h1 {
+			font-size: 35px;
+			color: #444;
+		}
+		img {
+			margin: 10px 0;
+			width: 150px;
+		}
+		form {
+			margin: 0 auto;
+			width: 200px;
+			border: 1px solid #bbb;
+			border-radius: 3px;
+
+			input {
+				display: block;
+				padding: 3px 7px;
+				width: 100%;
+				border: none;
+			}
+			input:first-child {
+				border-bottom: 1px solid #bbb;
+				border-radius: 0;
+			}
+			input:last-child {
+				color: #fff;
+				background-color: #2D8A3F;
+				border-radius: 0;
+			}
+		}
+	}
+}

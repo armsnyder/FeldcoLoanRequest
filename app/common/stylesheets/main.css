@@ -13,6 +13,34 @@
 /************
  * Partials *
  ************/
+main.login section.banner {
+  margin-top: 90px;
+  width: 100%;
+  text-align: center; }
+  main.login section.banner h1 {
+    font-size: 35px;
+    color: #444; }
+  main.login section.banner img {
+    margin: 10px 0;
+    width: 150px; }
+  main.login section.banner form {
+    margin: 0 auto;
+    width: 200px;
+    border: 1px solid #bbb;
+    border-radius: 3px; }
+    main.login section.banner form input {
+      display: block;
+      padding: 3px 7px;
+      width: 100%;
+      border: none; }
+    main.login section.banner form input:first-child {
+      border-bottom: 1px solid #bbb;
+      border-radius: 0; }
+    main.login section.banner form input:last-child {
+      color: #fff;
+      background-color: #2D8A3F;
+      border-radius: 0; }
+
 /***********
  * Globals *
  ***********/
@@ -23,6 +51,14 @@ label, table, caption {
   padding: 0; }
 
 html, body {
-  font-family: Arial, Arial, sans-serif; }
+  font-family: Arial, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4; }
+
+div.wrapper {
+  width: 100%; }
+  div.wrapper main {
+    padding: 5px;
+    width: 100%; }
 
 /*# sourceMappingURL=main.css.map */
