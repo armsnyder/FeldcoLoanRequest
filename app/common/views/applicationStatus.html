@@ -1,0 +1,51 @@
+<super-navbar>
+  	<super-navbar-title>Status</super-navbar-title>
+</super-navbar>
+
+
+<main class="application-status" ng-controller="ApplicationStatusController">
+
+	<section class="statuses">
+		<ul>
+			<li>
+				<h3>Feldco Finance</h3>
+				<div class="bank-waiting" ng-if="approvals.feldcoFinance.waiting"><p>Waiting for response...</p></div>
+				<div class="bank-info" ng-if="!approvals.feldcoFinance.waiting">
+					<span class="status" ng-class="approvals.feldcoFinance.text=='Approved'?'approved':'declined'">{{approvals.feldcoFinance.text}}</span>
+					<span class="amount">{{approvals.feldcoFinance.amount}}</span>
+				</div>
+			</li>
+			<li>
+				<h3>Wells Fargo</h3>
+				<div class="bank-waiting" ng-if="approvals.wellsFargo.waiting"><p>Waiting for response...</p></div>
+				<div class="bank-info"  ng-if="!approvals.wellsFargo.waiting">
+					<span class="status" ng-class="approvals.wellsFargo.text=='Approved'?'approved':'declined'">{{approvals.wellsFargo.text}}</span>
+					<span class="amount">{{approvals.wellsFargo.amount}}</span>
+				</div>
+			</li>
+			<li>
+				<h3>GreenSky</h3>
+				<div class="bank-waiting" ng-if="approvals.greenSky.waiting"><p>Waiting for response...</p></div>
+				<div class="bank-info"  ng-if="!approvals.greenSky.waiting">
+					<span class="status" ng-class="approvals.greenSky.text=='Approved'?'approved':'declined'">{{approvals.greenSky.text}}</span>
+					<span class="amount">{{approvals.greenSky.amount}}</span>
+				</div>
+			</li>
+		</ul>
+	</section>
+
+
+	<section class="tools">
+		<ul>
+			<li>
+				<i class="icon super-calculator"></i>
+				<span>TIL Calculations</span>
+			</li>
+			<li>
+				<i class="icon super-document"></i>
+				<span>Promo Templates</span>
+			</li>
+		</ul>
+	</section>
+
+</main>

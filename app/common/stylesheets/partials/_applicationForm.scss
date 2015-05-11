@@ -1,0 +1,75 @@
+main.application-form {
+
+	section.personal-info {
+		margin: 30px auto 30px auto;
+		width: 90%;
+
+		form {
+
+			ul {
+				list-style: none;
+
+				li {
+					display: block;
+					overflow: auto;
+
+					label {
+						float: left;
+						width: 150px;
+						vertical-align: top;
+						color: #b5babc;
+					}
+					div.inputs {
+						float: right;
+						width: calc(100% - 150px - 30px);
+
+						input {
+							display: inline;
+							vertical-align: top;
+						}
+						input[type="text"], input[type="email"] {
+							margin-right: 4px;
+							padding: 15px 20px;
+							width: 150px;
+							background-color: #f5f9f6;
+							border: 1px solid #dce4e6;
+							-webkit-appearance: none; 
+							-moz-appearance: none;
+						}
+						span {
+							margin: 0 5px;
+						}
+					}
+					hr {
+						clear: both;
+						margin: 70px 0 50px 0;
+					    height: 0;
+						border-top: 1px solid rgba(0, 0, 0, 0.1);
+						border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+					}
+				}
+				li.submit {
+					width: 100%;
+					text-align: center;
+
+					input {
+						margin: 0 auto;
+						padding: 10px 15px;
+						color: #fff;
+						background-color: #378ad0;
+						border: none;
+						border-radius: 15px;
+					}
+				}
+			}
+		}
+
+		label {
+			display: block;
+			font-weight: bold;
+		}
+		input {
+			background-color: #fff;
+		}
+	}
+}

@@ -1,0 +1,179 @@
+/************
+ * Partials *
+ ************/
+/**************
+ * Typography *
+ **************/
+/**********
+ * Colors *
+ **********/
+/***********
+ * Modules *
+ ***********/
+/************
+ * Partials *
+ ************/
+main.login section.banner {
+  margin-top: 130px;
+  width: 100%;
+  text-align: center; }
+  main.login section.banner h1 {
+    font-size: 35px;
+    color: #444; }
+  main.login section.banner img {
+    margin: 10px 0;
+    width: 150px; }
+  main.login section.banner form {
+    width: 100%; }
+    main.login section.banner form input {
+      display: block;
+      margin: 0 auto;
+      padding: 15px 20px;
+      width: 250px;
+      background-color: #f5f9f6;
+      border: none;
+      border: 1px solid #dce4e6;
+      border-style: solid solid none solid;
+      border-radius: 0;
+      -webkit-appearance: none;
+      -moz-appearance: none; }
+    main.login section.banner form input:first-child {
+      border-radius: 3px 3px 0 0; }
+    main.login section.banner form input:last-child {
+      padding: 8px 0;
+      font-weight: bold;
+      color: #fff;
+      background-color: #378ad0;
+      border: none;
+      border-radius: 0 0 3px 3px; }
+
+main.application-form section.personal-info {
+  margin: 30px auto 30px auto;
+  width: 90%; }
+  main.application-form section.personal-info form ul {
+    list-style: none; }
+    main.application-form section.personal-info form ul li {
+      display: block;
+      overflow: auto; }
+      main.application-form section.personal-info form ul li label {
+        float: left;
+        width: 150px;
+        vertical-align: top;
+        color: #b5babc; }
+      main.application-form section.personal-info form ul li div.inputs {
+        float: right;
+        width: calc(100% - 150px - 30px); }
+        main.application-form section.personal-info form ul li div.inputs input {
+          display: inline;
+          vertical-align: top; }
+        main.application-form section.personal-info form ul li div.inputs input[type="text"], main.application-form section.personal-info form ul li div.inputs input[type="email"] {
+          margin-right: 4px;
+          padding: 15px 20px;
+          width: 150px;
+          background-color: #f5f9f6;
+          border: 1px solid #dce4e6;
+          -webkit-appearance: none;
+          -moz-appearance: none; }
+        main.application-form section.personal-info form ul li div.inputs span {
+          margin: 0 5px; }
+      main.application-form section.personal-info form ul li hr {
+        clear: both;
+        margin: 70px 0 50px 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    main.application-form section.personal-info form ul li.submit {
+      width: 100%;
+      text-align: center; }
+      main.application-form section.personal-info form ul li.submit input {
+        margin: 0 auto;
+        padding: 10px 15px;
+        color: #fff;
+        background-color: #378ad0;
+        border: none;
+        border-radius: 15px; }
+  main.application-form section.personal-info label {
+    display: block;
+    font-weight: bold; }
+  main.application-form section.personal-info input {
+    background-color: #fff; }
+
+main.application-status section.statuses {
+  margin: 30px auto 20px auto;
+  width: 90%; }
+  main.application-status section.statuses ul {
+    list-style: none;
+    overflow: auto; }
+    main.application-status section.statuses ul li {
+      float: left;
+      padding: 20px 30px;
+      width: calc(100% / 3);
+      height: 300px;
+      border-right: 1px solid #dce4e6; }
+      main.application-status section.statuses ul li h3 {
+        margin-bottom: 18px;
+        font-size: 30px;
+        color: #b5babc; }
+      main.application-status section.statuses ul li div.bank-waiting p {
+        font-size: 20px;
+        color: #dce4e6; }
+      main.application-status section.statuses ul li div.bank-info span.status {
+        display: block;
+        font-size: 20px; }
+      main.application-status section.statuses ul li div.bank-info span.approved {
+        color: #2D953F; }
+      main.application-status section.statuses ul li div.bank-info span.declined {
+        color: #98211E; }
+      main.application-status section.statuses ul li div.bank-info span.amount {
+        display: block;
+        font-size: 16px; }
+      main.application-status section.statuses ul li div.bank-info span.amount.declined {
+        display: none; }
+    main.application-status section.statuses ul li:last-child {
+      border: none; }
+main.application-status section.tools {
+  margin: 50px auto 30px auto;
+  width: 90%; }
+  main.application-status section.tools ul {
+    width: 100%;
+    list-style: none;
+    overflow: auto;
+    text-align: center; }
+    main.application-status section.tools ul li {
+      display: inline-block;
+      padding: 10px 17px;
+      color: #fff;
+      background-color: #378ad0;
+      border: none;
+      border-radius: 15px; }
+      main.application-status section.tools ul li i {
+        margin-right: 5px;
+        font-size: 17px; }
+      main.application-status section.tools ul li span {
+        font-size: 14px; }
+    main.application-status section.tools ul li:first-child {
+      margin-right: 30px; }
+    main.application-status section.tools ul li:last-child {
+      margin-left: 30px; }
+
+/***********
+ * Globals *
+ ***********/
+html, body, div, span, h1, h2, h3, h4,
+h5, h6, p, a, img, i, ol, ul, li, form,
+label, table, caption {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  font-family: Arial, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4; }
+
+div.wrapper {
+  width: 100%; }
+  div.wrapper main {
+    padding: 5px;
+    width: 100%; }
+
+/*# sourceMappingURL=main.css.map */
