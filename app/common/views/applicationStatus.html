@@ -3,22 +3,33 @@
 </super-navbar>
 
 
-<main class="application-status">
+<main class="application-status" ng-controller="ApplicationStatusController">
 
 	<section class="statuses">
 		<ul class="banks">
 			<li>
 				<h3>Feldco Finance</h3>
-				<div class="bank-info">
-					<span class="status">Approved</span>
-					<span class="amount">$15,000</span>
+				<div class="bank-waiting" ng-if="approvals.feldcoFinance.waiting"><p>Waiting for response...</p></div>
+				<div class="bank-info" ng-if="!approvals.feldcoFinance.waiting">
+					<span class="status">{{approvals.feldcoFinance.text}}</span>
+					<span class="amount">{{approvals.feldcoFinance.amount}}</span>
 				</div>
 			</li>
 			<li>
 				<h3>Wells Fargo</h3>
+				<div class="bank-waiting" ng-if="approvals.wellsFargo.waiting"><p>Waiting for response...</p></div>
+				<div class="bank-info" ng-if="!approvals.wellsFargo.waiting">
+					<span class="status">{{approvals.wellsFargo.text}}</span>
+					<span class="amount">{{approvals.wellsFargo.amount}}</span>
+				</div>
 			</li>
 			<li>
 				<h3>GreenSky</h3>
+				<div class="bank-waiting" ng-if="approvals.greenSky.waiting"><p>Waiting for response...</p></div>
+				<div class="bank-info" ng-if="!approvals.greenSky.waiting">
+					<span class="status">{{approvals.greenSky.text}}</span>
+					<span class="amount">{{approvals.greenSky.amount}}</span>
+				</div>
 			</li>
 		</ul>
 		<ul class="tools">
