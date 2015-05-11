@@ -1,4 +1,4 @@
-angular.module('FeldcoLoanRequest').controller('LoginController', function($scope, supersonic) {
+angular.module('common').controller('LoginController', function($scope, supersonic) {
 
 
 

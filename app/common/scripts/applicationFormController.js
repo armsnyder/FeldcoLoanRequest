@@ -1,18 +1,10 @@
 angular
-	.module('FeldcoLoanRequest')
-	.controller('ApplicationFormController', 'FormService',function ($scope, supersonic, FormService) {
-	    /*$scope.master = {firstName: "John", lastName: "Doe"};
-    $scope.reset = function() {
-        //$scope.user = angular.copy($scope.master);
-        supersonic.logger.log($scope.user);
+	.module('common')
+	.controller('ApplicationFormController', function ($scope, supersonic, FormService) {
+    $scope.formInfo = {};
+    $scope.submit = function(form){
+        FormService.forms.creditForm = angular.copy(form);
+        var view = new supersonic.ui.View("common#applicationStatus");
+        supersonic.ui.layers.push(view);
     };
-    $scope.reset();
-
-	supersonic.logger.log("test0");*/
-  $scope.update = function(form){
-    FormService.creditForm = angular.copy(form);
-  }
-	$scope.totalAmount = 5000;
-	$scope.$apply();
-	supersonic.logger.log("test2");
 });
