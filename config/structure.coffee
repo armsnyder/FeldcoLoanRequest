@@ -22,17 +22,17 @@ module.exports =
 #  ]
 
   rootView:
-    location: "example#getting-started"
+    location: "common#applicationForm"
 
   preloads: [
-    {
-      id: "learn-more"
-      location: "example#learn-more"
-    }
-    {
-      id: "using-the-scanner"
-      location: "example#using-the-scanner"
-    }
+#    {
+#      id: "learn-more"
+#      location: "example#learn-more"
+#    }
+#    {
+#      id: "using-the-scanner"
+#      location: "example#using-the-scanner"
+#    }
   ]
 
   # drawers:
@@ -44,6 +44,6 @@ module.exports =
   #     animation: "swingingDoor"
   #
   initialView: {
-    id: "initialView"
-    location: "example#initial-view"
+    id: "login"
+    location: "common#login"
   }
