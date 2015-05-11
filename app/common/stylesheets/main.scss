@@ -15,4 +15,13 @@ label, table, caption, {
 }
 html, body {
 	font-family: $base-font-family;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+}
+div.wrapper {
+	width: 100%;
+
+	main {
+		width: 100%;
+	}
 }
