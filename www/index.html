@@ -1,55 +1,33 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<html lang="en" ng-app="FeldcoLoanRequest">
 
-  <title>My Steroids App</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  <link rel="stylesheet" href="/components/supersonic/css/supersonic.css">
-  <link rel="stylesheet" href="/stylesheets/application.css">
-  <link rel="import" href="/components/supersonic/components/import.html">
+        <title>My Steroids App</title>
 
-  <script src="http://localhost/cordova.js"></script>
-  <script src="/components/steroids-js/steroids.js"></script>
-  <script src="/components/angular/angular.js"></script>
-  <script src="/components/supersonic/supersonic.js"></script>
-  <script src="/components/webcomponentsjs/webcomponents.js"></script>
+        <link rel="stylesheet" href="/components/supersonic/css/supersonic.css">
+        <link rel="stylesheet" href="/stylesheets/application.css">
+    </head>
+    
+    <body>
 
-  <script src="app.js"></script>
-  <script src="applicationForm/applicationFormController.js"></script>
-  <script src="applicationStatus/applicationStatusController.js"></script>
-  <script src="applicationStatus/bankRequestService.js"></script>
-  <script src="login/loginController.js"></script>
-</head>
-<body ng-app="FeldcoLoanRequest">
+        <div class="content" ng-view></div>
 
-<div class="padding">
 
-  <super-navbar>
-    <super-navbar-title ng-bind="navbarTitle">
-    </super-navbar-title>
-  </super-navbar>
+        <script src="http://localhost/cordova.js"></script>
+        <script src="/components/steroids-js/steroids.js"></script>
+        <script src="/components/angular/angular.js"></script>
+        <script src="/bower_components/angular-route/angular-route.js"></script>
+        <script src="/components/supersonic/supersonic.js"></script>
+        <script src="/components/webcomponentsjs/webcomponents.js"></script>
 
-  <super-navigate location="login/login.html">
-    <button class="button button-block">
-      Login Page
-    </button>
-  </super-navigate>
+        <script src="/app.js"></script>
+        <script src="/applicationForm/applicationFormController.js"></script>
+        <script src="/applicationStatus/applicationStatusController.js"></script>
+        <script src="/applicationStatus/bankRequestService.js"></script>
+        <script src="/login/loginController.js"></script>
+    </body>
 
-  <super-navigate location="applicationStatus/applicationStatus.html">
-    <button class="button button-block">
-      Application Status
-    </button>
-  <super-navigate>
-
-  <super-navigate location="applicationForm/applicationForm.html">
-    <button class="button button-block">
-      Credit Application Form
-    </button>
-  </super-navigate>
-
-</div>
-
-</body>
 </html>
