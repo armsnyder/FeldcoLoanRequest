@@ -1,0 +1,26 @@
+/**************
+ * Typography *
+ **************/
+$base-font-family: Arial, Arial, sans-serif;
+$fixed-font-family: $base-font-family;
+$base-font-size: 13px;
+$base-line-height: 1.4;
+
+
+/**********
+ * Colors *
+ **********/
+
+
+/***********
+ * Modules *
+ ***********/
+@import "../modules/all";
+
+
+/************
+ * Partials *
+ ************/
+@import "login";
+@import "applicationForm";
+@import "applicationStatus";
