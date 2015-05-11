@@ -28,39 +28,70 @@ main.login section.banner {
     main.login section.banner form input {
       display: block;
       margin: 0 auto;
-      padding: 3px 7px;
+      padding: 15px 20px;
       width: 250px;
+      background-color: #f5f9f6;
       border: none;
-      border: 1px solid #bbb;
+      border: 1px solid #dce4e6;
       border-style: solid solid none solid;
-      border-radius: 0; }
+      border-radius: 0;
+      -webkit-appearance: none;
+      -moz-appearance: none; }
     main.login section.banner form input:first-child {
-      border-bottom: 1px solid #bbb;
       border-radius: 3px 3px 0 0; }
     main.login section.banner form input:last-child {
       padding: 8px 0;
       font-weight: bold;
       color: #fff;
-      background-color: #2D8A3F;
+      background-color: #378ad0;
       border: none;
       border-radius: 0 0 3px 3px; }
 
 main.application-form section.personal-info {
-  margin: 30px auto 0 auto;
-  width: 600px; }
+  margin: 30px auto 30px auto;
+  width: 90%; }
   main.application-form section.personal-info form ul {
     list-style: none; }
     main.application-form section.personal-info form ul li {
       display: block;
-      padding: 20px 0;
       overflow: auto; }
       main.application-form section.personal-info form ul li label {
         float: left;
         width: 150px;
+        vertical-align: top;
         color: #b5babc; }
       main.application-form section.personal-info form ul li div.inputs {
         float: right;
-        width: 340px; }
+        width: calc(100% - 150px - 30px); }
+        main.application-form section.personal-info form ul li div.inputs input {
+          display: inline;
+          vertical-align: top; }
+        main.application-form section.personal-info form ul li div.inputs input[type="text"] {
+          margin-right: 4px;
+          padding: 15px 20px;
+          width: 150px;
+          background-color: #f5f9f6;
+          border: 1px solid #dce4e6;
+          -webkit-appearance: none;
+          -moz-appearance: none; }
+        main.application-form section.personal-info form ul li div.inputs span {
+          margin: 0 5px; }
+      main.application-form section.personal-info form ul li hr {
+        clear: both;
+        margin: 70px 0 50px 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    main.application-form section.personal-info form ul li.submit {
+      width: 100%;
+      text-align: center; }
+      main.application-form section.personal-info form ul li.submit input {
+        margin: 0 auto;
+        padding: 10px 15px;
+        color: #fff;
+        background-color: #378ad0;
+        border: none;
+        border-radius: 15px; }
   main.application-form section.personal-info label {
     display: block;
     font-weight: bold; }
