@@ -1,11 +1,91 @@
 main.application-status {
 
 	section.statuses {
-		margin: 30px auto 30px auto;
+		margin: 30px auto 20px auto;
 		width: 90%;
 
-		ul.banks {
+		ul {
+			list-style: none;
+			overflow: auto;
 
+			li {
+				float: left;
+				padding: 20px 30px;
+				width: calc(100% / 3);
+				height: 300px;
+				border-right: 1px solid #dce4e6;
+
+				h3 {
+					margin-bottom: 18px;
+					font-size: 30px;
+					color: #b5babc;
+				}
+				div.bank-waiting {
+
+					p {
+						font-size: 20px;
+						color: #dce4e6;
+					}
+				}
+				div.bank-info {
+
+					span.status {
+						display: block;
+						font-size: 20px;
+					}
+					span.approved {
+						color: #2D953F;
+					}
+					span.declined {
+						color: #98211E;
+					}
+					span.amount {
+						display: block;
+						font-size: 16px;
+					}
+					span.amount.declined {
+						display: none;
+					}
+				}
+			}
+			li:last-child {
+				border: none;
+			}
+		}
+	}
+
+	section.tools {
+		margin: 50px auto 30px auto;
+		width: 90%;
+
+		ul {
+			width: 100%;
+			list-style: none;
+			overflow: auto;
+			text-align: center;
+
+			li {
+				display: inline-block;
+				padding: 10px 17px;
+				color: #fff;
+				background-color: #378ad0;
+				border: none;
+				border-radius: 15px;
+
+				i {
+					margin-right: 5px;
+					font-size: 17px;
+				}
+				span {
+					font-size: 14px;
+				}
+			}
+			li:first-child {
+				margin-right: 30px;
+			}
+			li:last-child {
+				margin-left: 30px;
+			}
 		}
 	}
 }
