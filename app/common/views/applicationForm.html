@@ -1,131 +1,52 @@
-
 <main class="FeldcoLoanRequest">
+	<span>Credit Application Form</span><br>
+	
+	<label>
+    	<span>Check Account Choice: </span><br>
+    	<input type="radio" ng-model="formInfo.choice" ng-value="true" />Individual
+    	<input type="radio" ng-model="formInfo.choice" ng-value="false" />Joint
+    </label>
+    
+    <label>
+	    <span>First Name</span>
+	    <input type="text" placeholder="John" ng-model="formInfo.firstName">
+	</label>
 
-	<p>Credit Application Form</p>
-	<section class="list">
+	<label>
+		<span>Middle Initial</span>
+		<input type="text" placeholder="K." ng-model="formInfo.middleInitial">
+	</label>
 
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Total Amount for Contracts</span>
-	    <input type="text" placeholder="$10,000.00" ng-model="totalAmount">
-	    {{totalAmount}}
-	  </label>
+	<label>
+		<span>Last Name</span>
+		<input type="text" placeholder="Doe" ng-model="formInfo.lastName">
+	</label>
 
-	  <br>
+	<label>
+		<span>Date of Birth</span>
+		<input type="date" ng-model="formInfo.birthDate">
+	</label>
 
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Loan Amount</span>
-	    <input type="text" placeholder="$5,000.00">
-	  </label>
+	<label>
+		<span>Social Security Number</span>
+		<input type="text" placeholder="XXXXXXXXX" ng-model="formInfo.lastName">
+	</label>
 
-<br>
+	<label>
+		<span>Physical Street Address</span>
+		<input type="text" placeholder="" ng-model="formInfo.address">
+	</label>
 
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Best Contact Phone</span>
-	    <input type="text" placeholder="555-555-5555">
-	  </label>
+	<label>
+		<span>Physical Street Address</span>
+		<input type="text" placeholder="" ng-model="formInfo.address">
+	</label>
 
-<br>
+	<label>
+    	<span>Address Type:</span>
+    	<input type="radio" ng-model="formInfo.addressType" ng-value="true" />Own
+    	<input type="radio" ng-model="formInfo.addressType" ng-value="false" />Rent
+    </label>
 
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">First Name</span>
-	    <input type="text" placeholder="John">
-	  </label>
-
-	  <br>
-
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Middle Initial</span>
-	    <input type="text" placeholder="K.">
-	  </label>
-
-	  <br>
-
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Last Name</span>
-	    <input type="text" placeholder="Doe">
-	  </label>
-
-	  <br>
-
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Address</span>
-	    <input type="text" placeholder="123 Main St.">
-	  </label>
-
-	  <br>
-
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">City</span>
-	    <input type="text" placeholder="Chicago">
-	  </label>
-
-	  <br>
-
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Zip Code</span>
-	    <input type="text" placeholder="60201">
-	  </label>
-
-	  <br>
-
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Year In House</span>
-	    <input type="text" placeholder="5">
-	  </label>
-
-	  <br>
-
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Do you own your Property?</span>
-	    <input type="checkbox">
-	  </label>
-
-	  <br>
-
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Email Address</span>
-	    <input type="text" placeholder="555-555-5555">
-	  </label>
-
-	  <br>
-
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Employer Name</span>
-	    <input type="text" placeholder="ABC Insurance Co.">
-	  </label>
-
-	  <br>
-
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Years on Job</span>
-	    <input type="text" placeholder="10">
-	  </label>
-
-	  <br>
-
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Work Phone Number</span>
-	    <input type="text" placeholder="555-555-5555">
-	  </label>
-
-	  <br>
-
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Annual Income</span>
-	    <input type="text" placeholder="$60,000.00">
-	  </label>
-
-	  <br>
-
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">Would you like to add a co-applicant?</span>
-	    <input type="checkbox">
-	  </label>
-
-	</section>
-
-		<button class="button button-full button-positive" location="../applicationStatus/applicationStatus.html">
-		  Submit Loan Application
-		</button>
 
 </main>
