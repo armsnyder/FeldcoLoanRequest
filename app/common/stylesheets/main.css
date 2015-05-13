@@ -167,7 +167,7 @@ main.clientList section.clientList {
     overflow: auto; }
     main.clientList section.clientList ul li {
       float: left;
-      margin: 0 5px 5px 0;
+      margin: 0 5px 30px 0;
       width: calc((100% - 15px) / 4);
       background-color: #fff;
       border: 1px solid #e8e8e8;
