@@ -5,6 +5,7 @@ angular
 
         factory.forms = {
             creditForm : {}
+            //coApplicant: {}
         };
 
         return factory;
