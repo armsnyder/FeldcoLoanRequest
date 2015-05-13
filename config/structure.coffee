@@ -22,7 +22,7 @@ module.exports =
 #  ]
 
   rootView:
-    location: "common#applicationForm"
+    location: "common#clientList"
 
   preloads: [
 #    {
