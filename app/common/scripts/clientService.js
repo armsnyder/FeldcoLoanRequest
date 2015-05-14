@@ -8,13 +8,17 @@ angular.module('common').factory('ClientService', function($q, supersonic) {
         obj.name = name;
         return obj;
     };
+    factory.clientList.push(createClient("Jimmy Butler"));
+    factory.clientList.push(createClient("Mike Dunleavy"));   
+    factory.clientList.push(createClient("Pau Gasol"));
+    factory.clientList.push(createClient("Taj Gibson"));
+    factory.clientList.push(createClient("Joakim Noah"));
+    factory.clientList.push(createClient("Derrick Rose"));
+   
 
-    factory.clientList.push(createClient("AAA"));
-    factory.clientList.push(createClient("BBB"));
-    factory.clientList.push(createClient("CCC"));
-    factory.clientList.push(createClient("DDD"));
-    factory.clientList.push(createClient("CCC"));
-    factory.clientList.push(createClient("DDD"));
+
+
+
 
 
 
