@@ -3,7 +3,10 @@
 </super-navbar>
 
 
-<main class="clientList">    
+<main class="clientList">  
+
+    <h2>My Clients</h2>
+
     <section class="clientList" ng-controller="ClientListController">
         <ul>
             <li ng-repeat = "client in clientList" ng-class="{active:$index==selected}" ng-click="selectClient($index)">
