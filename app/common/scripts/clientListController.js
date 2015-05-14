@@ -5,7 +5,7 @@ angular.module('common').controller('ClientListController', function($scope, sup
     $scope.$apply();
     $scope.selectClient = function(index){
         $scope.selected = index;
-        var view = new supersonic.ui.View("common#applicationForm");
+        var view = new supersonic.ui.View("common#supplement");
         supersonic.ui.layers.push(view);
     }
 
