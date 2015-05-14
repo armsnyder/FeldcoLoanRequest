@@ -11,94 +11,179 @@
 				<li>
 					<label>TOTAL AMOUNT FOR CONTRACTS</label>
 					<div class="inputs">
-						<input type="text" placeholder="$15,000.00" ng-model="formInfo.totalAmount">
+						<input type="text" placeholder="$15,000.00" ng-model="creditformInfo.totalAmount">
 					</div>
 					<hr>
 				</li>
 				<li>
 					<label>LOAN AMOUNT</label>
 					<div class="inputs">
-						<input type="text" placeholder="$12,000.00" ng-model="formInfo.loanAmount">
+						<input type="text" placeholder="$12,000.00" ng-model="creditformInfo.loanAmount">
 					</div>
 					<hr>
 				</li>
 				<li>
 					<label>BEST CONTACT PHONE</label>
 					<div class="inputs">
-						<input type="text" placeholder="555-555-5555" ng-model="formInfo.phoneBest">
+						<input type="text" placeholder="555-555-5555" ng-model="creditformInfo.phoneBest">
 					</div>
 					<hr>
 				</li>
 				<li>
 					<label>WORK PHONE</label>
 					<div class="inputs">
-						<input type="text" placeholder="555-555-5555" ng-model="formInfo.phoneWork">
+						<input type="text" placeholder="555-555-5555" ng-model="creditformInfo.phoneWork">
 					</div>
 					<hr>
 				</li>
 				<li>
 					<label>NAME</label>
 					<div class="inputs">
-						<input type="text" placeholder="First" ng-model="formInfo.firstName">
-						<input type="text" placeholder="Middle Initial" ng-model="formInfo.middleInitial">
-						<input type="text" placeholder="Last" ng-model="formInfo.lastName">
+						<input type="text" placeholder="First" ng-model="creditformInfo.firstName">
+						<input type="text" placeholder="Middle Initial" ng-model="creditformInfo.middleInitial">
+						<input type="text" placeholder="Last" ng-model="creditformInfo.lastName">
 					</div>
 					<hr>
 				</li>
 				<li>
 					<label>HOME ADDRESS</label>
 					<div class="inputs">
-						<input type="text" placeholder="Street" ng-model="formInfo.addressStreet">
-						<input type="text" placeholder="City" ng-model="formInfo.addressCity">
-						<input type="text" placeholder="Zip Code" ng-model="formInfo.addressZipCode">
+						<input type="text" placeholder="Street" ng-model="creditformInfo.addressStreet">
+						<input type="text" placeholder="City" ng-model="creditformInfo.addressCity">
+						<input type="text" placeholder="Zip Code" ng-model="creditformInfo.addressZipCode">
 					</div>
 					<hr>
 				</li>
 				<li>
 					<label>YEAR IN HOUSE</label>
 					<div class="inputs">
-						<input type="text" placeholder="12" ng-model="formInfo.yearInHouse">
+						<input type="text" placeholder="12" ng-model="creditformInfo.yearInHouse">
 					</div>
 					<hr>
 				</li>
 				<li>
 					<label>OWN PROPERTY</label>
 					<div class="inputs">
-						<input type="radio" ng-model="formInfo.property" ng-value="true" /><span>Yes</span>
-						<input type="radio" ng-model="formInfo.property" ng-value="false" /><span>No</span>
+						<input type="radio" ng-model="creditformInfo.property" ng-value="true" /><span>Yes</span>
+						<input type="radio" ng-model="creditformInfo.property" ng-value="false" /><span>No</span>
 					</div>
 					<hr>
 				</li>
 				<li>
 					<label>EMAIL ADDRESS</label>
 					<div class="inputs">
-						<input type="email" placeholder="test@example.com" ng-model="formInfo.email">
+						<input type="email" placeholder="test@example.com" ng-model="creditformInfo.email">
 					</div>
 					<hr>
 				</li>
 				<li>
 					<label>EMPLOYER NAME</label>
 					<div class="inputs">
-						<input type="text" placeholder="ABC Dental Inc." ng-model="formInfo.employerName">
+						<input type="text" placeholder="ABC Dental Inc." ng-model="creditformInfo.employerName">
 					</div>
 					<hr>
 				</li>
 				<li>
 					<label>YEARS ON JOB</label>
 					<div class="inputs">
-						<input type="text" placeholder="5" ng-model="formInfo.yearsOnJob">
+						<input type="text" placeholder="5" ng-model="creditformInfo.yearsOnJob">
 					</div>
 					<hr>
 				</li>
 				<li>
 					<label>ANNUAL INCOME</label>
 					<div class="inputs">
-						<input type="text" placeholder="$100,000.00" ng-model="formInfo.income">
+						<input type="text" placeholder="$100,000.00" ng-model="creditformInfo.income">
 					</div>
 					<hr>
 				</li>
+				<li>
+					<label>CO-APPLICANT</label>
+					<div class="inputs">
+						<input type="radio" name="coapp" ng-model="creditformInfo.coapp" ng-click="coApplicant(true)"><span>Yes</span>
+						<input type="radio" name="coapp" ng-model="creditformInfo.coapp" ng-click="coApplicant(false)"><span>No</span>
+					</div>
+					<hr>
+				</li>
+				<div ng-show="showCoapp">
+					<li>
+						<label>BEST CONTACT PHONE</label>
+						<div class="inputs">
+							<input type="text" placeholder="555-555-5555" ng-model="creditformInfo.coAppPhoneBest">
+						</div>
+						<hr>
+					</li>
+					<li>
+						<label>WORK PHONE</label>
+						<div class="inputs">
+							<input type="text" placeholder="555-555-5555" ng-model="creditformInfo.coAppPhoneWork">
+						</div>
+						<hr>
+					</li>
+					<li>
+						<label>NAME</label>
+						<div class="inputs">
+							<input type="text" placeholder="First" ng-model="creditformInfo.coAppFirstName">
+							<input type="text" placeholder="Middle Initial" ng-model="creditformInfo.coAppMiddleInitial">
+							<input type="text" placeholder="Last" ng-model="creditformInfo.coAppLastName">
+						</div>
+						<hr>
+					</li>
+					<li>
+						<label>HOME ADDRESS</label>
+						<div class="inputs">
+							<input type="text" placeholder="Street" ng-model="creditformInfo.addressStreet">
+							<input type="text" placeholder="City" ng-model="creditformInfo.addressCity">
+							<input type="text" placeholder="Zip Code" ng-model="creditformInfo.addressZipCode">
+						</div>
+						<hr>
+					</li>
+					<li>
+						<label>YEAR IN HOUSE</label>
+						<div class="inputs">
+						  <input type="text" placeholder="12" ng-model="creditformInfo.coAppYearInHouse">
+						</div>
+						<hr>
+					</li>
+					<li>
+						<label>OWN PROPERTY</label>
+						<div class="inputs">
+						  <input type="radio" ng-model="creditformInfo.coAppProperty" ng-value="true" /><span>Yes</span>
+						  <input type="radio" ng-model="creditformInfo.coAppProperty" ng-value="false" /><span>No</span>
+						</div>
+						<hr>
+					</li>
+					<li>
+						<label>EMAIL ADDRESS</label>
+						<div class="inputs">
+						  <input type="email" placeholder="test@example.com" ng-model="creditformInfo.coAppEmail">
+						</div>
+						<hr>
+					</li>
+					<li>
+						<label>EMPLOYER NAME</label>
+						<div class="inputs">
+						  <input type="text" placeholder="ABC Dental Inc." ng-model="creditformInfo.coAppEmployerName">
+						</div>
+						<hr>
+					</li>
+					<li>
+						<label>YEARS ON JOB</label>
+						<div class="inputs">
+						  <input type="text" placeholder="5" ng-model="creditformInfo.coAppYearsOnJob">
+						</div>
+						<hr>
+					</li>
+					<li>
+						<label>ANNUAL INCOME</label>
+						<div class="inputs">
+						  <input type="text" placeholder="$100,000.00" ng-model="creditformInfo.coAppIncome">
+						</div>
+						<hr>
+					</li>
+				</div>
 				<li class="submit">
-					<input type="submit" ng-click="submit(formInfo)" value="Submit" />
+					<input type="submit" ng-click="submit(creditformInfo)" value="Submit" />
 				</li>
 			</ul>
 		</form>
