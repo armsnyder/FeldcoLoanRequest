@@ -156,6 +156,15 @@ main.application-status section.tools {
     main.application-status section.tools ul li:last-child {
       margin-left: 30px; }
 
+main.supplement section iframe {
+  display: block;
+  width: 900px;
+  height: 1800px;
+  overflow: auto;
+  border: 0;
+  align: center;
+  margin-left: 20%; }
+
 main.clientList section.clientList {
   padding-top: 30px;
   width: 100%;
