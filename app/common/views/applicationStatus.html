@@ -41,6 +41,13 @@
 				</li>
 			</div>
 
+			<div ng-show="noApprovals">
+				<h2>We apologize, but you have not been approved for a loan at this time.</h2>
+				<super-navigate location="common#applicationForm">
+				    <button class="button button-block button-positive">Go back to application form</button>
+				</super-navigate>
+			</div>
+
 		</ul>
 	</section>
 
@@ -48,6 +55,9 @@
 	<section class="tools">
 			<div ng-show="waitingForApprovals">
 				<h3>Waiting for an approval</h3>
+				<h4 ng-show="contactingFeldco">Contacting Feldco...</h4>
+				<h4 ng-show="contactingWellsFargo">Contacting Wells Fargo...</h4>
+				<h4 ng-show="contactingGreenSky">Contacting Green Sky...</h4>
 			</div>
 		<ul>
 			<li ng-show="approvals.feldcoFinance.showFeldco">
