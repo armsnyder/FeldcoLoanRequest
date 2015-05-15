@@ -63,8 +63,10 @@ angular.module('common').controller('ApplicationStatusController', function($sco
                 if($scope.approvals.greenSky.showGreenSky){
                     $scope.waitingForApprovals = false;
                 }
+                else{
+                    $scope.noApprovals = true;
+                }
                 $scope.waitingForApprovals = false;
-                $scope.noApprovals = true;
                 supersonic.logger.log(3);
             }, 2000)
         }, 2000)
@@ -74,26 +76,32 @@ angular.module('common').controller('ApplicationStatusController', function($sco
         requestObject = {bank: 'internal', creditScore: $scope.creditScore};
         BankRequestService.submitRequest(requestObject).then(function(result) {
             var approved = result.approved;
+            $scope.contactingFeldco = false;
             if (approved) {
                 $scope.approvals.feldcoFinance.text = 'Approved';
                 $scope.approvals.feldcoFinance.amount = FormService.forms.creditForm.loanAmount;
                         $scope.approvals.feldcoFinance.showFeldco = true;
                         $scope.waitingForApprovals = false;
+
             } else {
+                $scope.contactingWellsFargo = true;
                 $scope.approvals.feldcoFinance.text = 'Declined';
                 requestObject = {bank: 'wellsFargo', creditScore: $scope.creditScore};
                 BankRequestService.submitRequest(requestObject).then(function(result) {
                     var approved = result.approved;
+                    $scope.contactingWellsFargo = false;
                     if (approved) {
                         $scope.approvals.wellsFargo.text = 'Approved';
                         $scope.approvals.wellsFargo.amount = FormService.forms.creditForm.loanAmount;
                         $scope.approvals.wellsFargo.showWellsFargo = true;
                         $scope.waitingForApprovals = false;
                     } else {
+                        $scope.contactingGreenSky = true;
                         $scope.approvals.wellsFargo.text = 'Declined';
                         requestObject = {bank: 'greenSky', creditScore: $scope.creditScore};
                         BankRequestService.submitRequest(requestObject).then(function(result) {
                             var approved = result.approved;
+                            $scope.contactingGreenSky = false;
                             if (approved) {
                                 $scope.approvals.greenSky.text = 'Approved';
                                 $scope.approvals.greenSky.amount = FormService.forms.creditForm.loanAmount;
