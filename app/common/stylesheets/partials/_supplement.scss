@@ -16,19 +16,15 @@ main.supplement {
   // }
 
 section{
-  // width:718px;
-  // height:2000px;
   iframe{
-    display:block;
-    width:900px;
-    height:1800px;
-    overflow: auto;
-    border: 0;
-    align: center;
-    margin-left: 20%;
+    position: relative;
+    width: 100%;
+    height: 900px
+
+
   }
-
+input{
+  size:200%
 }
-
-
+}
 }
