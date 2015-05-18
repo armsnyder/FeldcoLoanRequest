@@ -17,6 +17,8 @@
         <script src="/components/angular/angular.js"></script>
         <script src="/components/supersonic/supersonic.js"></script>
         <script src="/components/webcomponentsjs/webcomponents.js"></script>
+        <script src="/components/pdfjs-dist/build/pdf.js"></script>
+        <script src="/components/angular-pdf-viewer/dist/angular-pdf-viewer.min.js"></script>
 
         <% _.each(yield.modules, function(module) { %>
             <script src="/app/<%= module %>.js"></script>
