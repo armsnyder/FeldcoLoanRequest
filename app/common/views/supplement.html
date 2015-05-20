@@ -9,19 +9,51 @@
     <iframe  src="http://docs.google.com/gview?url=https://dochub.com/yuxuanhe/VVrWoV/homework.pdf&embedded=true"></iframe>
   </section> -->
 
-  <pdf-viewer
-    url="pdfUrl"
-    scale="1"
-    show-toolbar="true"
-    headers="{ 'x-you-know-whats-awesome': 'EVERYTHING' }">
-  </pdf-viewer>
-
-
-  <input type="checkbox" name="supplement" value="agree"> I agree this supplement<br>
-
-  <super-navigate location="common#applicationForm">
-    <button class="button button-block button-positive"> navigate to "common/applicationForm"</button>
-  </super-navigate>
-
-
+  
+    <section class="supplementContent">
+        <h3>SUPPLEMENT TO CREDIT APPLICATION</h3>
+        <p>{{supplementContent1}}<span class = "underline">{{supplementContent2}}</span></p>
+        <div class = "input">
+            <div class = "checkbox">
+                <input type="checkbox" class="checkbox"> 
+                <span class="checkbox">I agree this supplement</span>
+            </div>
+            <div class = "initial">  
+                <span>If this is an application for joint credit, initial here:</span>
+                <input class = "initial" type = "text" ng-model="applicant.initial">
+                <input class = "initial" type = "text" ng-model="coApplicant.initial">
+            </div>
+            <div class = "applicant">  
+                <div class="inputline">
+                    <span>Signature</span><input class = "signature" type="text" placeholder="" ng-model="applicant.signature">
+                </div>
+                <div class="inputline">
+                    <span>Date</span><input class = "other" type="text" placeholder="" ng-model="applicant.signDate">
+                </div>
+                <div class="inputline">
+                    <span>Driving License</span><input class = "other" type="text" placeholder="" ng-model="applicant.drivingLicense">
+                </div>
+                <div class="inputline">
+                    <span>Exp Date</span><input class = "other" type="text" placeholder="" ng-model="applicant.expireDate">
+                </div>
+            </div>
+            <div class = "applicant">  
+                <div class="inputline">
+                    <span>Signature</span><input class = "signature" type="text" placeholder="" ng-model="coApplicant.signature">
+                </div>
+                <div class="inputline">
+                    <span>Date</span><input class = "other" type="text" placeholder="" ng-model="coApplicant.signDate">
+                </div>
+                <div class="inputline">
+                    <span>Driving License</span><input class = "other" type="text" placeholder="" ng-model="coApplicant.drivingLicense">
+                </div>
+                <div class="inputline">
+                    <span>Exp Date</span><input class = "other" type="text" placeholder="" ng-model="coApplicant.expireDate">
+                </div>
+            </div>
+        </div>
+        <super-navigate location="common#applicationForm">
+            <button class="button button-block button-positive">Submit</button>
+        </super-navigate>
+    </section>
 </main>
