@@ -17,7 +17,7 @@ main.supplement {
         div.input{
             width: 100%;
             margin: 2em 1em 1em 1em;
-            div.checkbox{
+            div.checkboxdiv{
                 margin:0 auto;
                 input[type=checkbox].checkbox{
                     margin:0 auto;
@@ -25,11 +25,11 @@ main.supplement {
                     border: 2px solid black;
                     border-radius: 0px;
                 }
-                span{
+                span.checkboxtext{
                     margin:0 auto;
                 }
             }
-            div.initial{
+            div.initialdiv{
                 margin: 1em auto;
                 span{
                     font:bold;
@@ -44,7 +44,7 @@ main.supplement {
                     border-radius: 0px;
                 }
             }
-            div.applicant{
+            div.applicantdiv{
                 display: inline-block;
                 margin: 0 auto;
                 width: 48%;
