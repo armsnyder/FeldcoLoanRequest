@@ -14,16 +14,16 @@
         <h3>SUPPLEMENT TO CREDIT APPLICATION</h3>
         <p>{{supplementContent1}}<span class = "underline">{{supplementContent2}}</span></p>
         <div class = "input">
-            <div class = "checkbox">
-                <input type="checkbox" class="checkbox"> 
-                <span class="checkbox">I agree this supplement</span>
+            <div class = "checkboxdiv">
+                <input type="checkbox" class="checkbox" ng-model="agree"> 
+                <span class="checkboxtext">I agree this supplement</span>
             </div>
-            <div class = "initial">  
+            <div class = "initialdiv">  
                 <span>If this is an application for joint credit, initial here:</span>
                 <input class = "initial" type = "text" ng-model="applicant.initial">
                 <input class = "initial" type = "text" ng-model="coApplicant.initial">
             </div>
-            <div class = "applicant">  
+            <div class = "applicantdiv">  
                 <div class="inputline">
                     <span>Signature</span><input class = "signature" type="text" placeholder="" ng-model="applicant.signature">
                 </div>
@@ -37,7 +37,7 @@
                     <span>Exp Date</span><input class = "other" type="text" placeholder="" ng-model="applicant.expireDate">
                 </div>
             </div>
-            <div class = "applicant">  
+            <div class = "applicantdiv">  
                 <div class="inputline">
                     <span>Signature</span><input class = "signature" type="text" placeholder="" ng-model="coApplicant.signature">
                 </div>
@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <super-navigate location="common#applicationForm">
+        <super-navigate location="common#applicationForm" ng-if="agree">
             <button class="button button-block button-positive">Submit</button>
         </super-navigate>
     </section>

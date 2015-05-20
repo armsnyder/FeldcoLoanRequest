@@ -171,20 +171,20 @@ main.supplement section.supplementContent {
   main.supplement section.supplementContent div.input {
     width: 100%;
     margin: 2em 1em 1em 1em; }
-    main.supplement section.supplementContent div.input div.checkbox {
+    main.supplement section.supplementContent div.input div.checkboxdiv {
       margin: 0 auto; }
-      main.supplement section.supplementContent div.input div.checkbox input[type=checkbox].checkbox {
+      main.supplement section.supplementContent div.input div.checkboxdiv input[type=checkbox].checkbox {
         margin: 0 auto;
         display: inline-block;
         border: 2px solid black;
         border-radius: 0px; }
-      main.supplement section.supplementContent div.input div.checkbox span {
+      main.supplement section.supplementContent div.input div.checkboxdiv span.checkboxtext {
         margin: 0 auto; }
-    main.supplement section.supplementContent div.input div.initial {
+    main.supplement section.supplementContent div.input div.initialdiv {
       margin: 1em auto; }
-      main.supplement section.supplementContent div.input div.initial span {
+      main.supplement section.supplementContent div.input div.initialdiv span {
         font: bold; }
-      main.supplement section.supplementContent div.input div.initial input[type=text].initial {
+      main.supplement section.supplementContent div.input div.initialdiv input[type=text].initial {
         height: 1.5em;
         margin: 0 1em;
         display: inline-block;
@@ -192,11 +192,11 @@ main.supplement section.supplementContent {
         width: 4em;
         border-bottom: solid 2px black;
         border-radius: 0px; }
-    main.supplement section.supplementContent div.input div.applicant {
+    main.supplement section.supplementContent div.input div.applicantdiv {
       display: inline-block;
       margin: 0 auto;
       width: 48%; }
-      main.supplement section.supplementContent div.input div.applicant input[type=text].signature {
+      main.supplement section.supplementContent div.input div.applicantdiv input[type=text].signature {
         margin: 1em 0;
         height: 1.5em;
         display: inline-block;
@@ -205,7 +205,7 @@ main.supplement section.supplementContent {
         width: auto;
         border-bottom: solid 2px black;
         border-radius: 0px; }
-      main.supplement section.supplementContent div.input div.applicant input[type=text].other {
+      main.supplement section.supplementContent div.input div.applicantdiv input[type=text].other {
         margin: 1em 0;
         height: 1.5em;
         display: inline-block;
@@ -214,7 +214,7 @@ main.supplement section.supplementContent {
         width: auto;
         border-bottom: solid 2px black;
         border-radius: 0px; }
-      main.supplement section.supplementContent div.input div.applicant span {
+      main.supplement section.supplementContent div.input div.applicantdiv span {
         display: inline-block;
         font-size: large; }
 
