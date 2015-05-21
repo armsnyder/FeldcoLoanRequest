@@ -20,6 +20,10 @@ angular.module('common').controller('ApplicationStatusController', function($sco
         }
     };
 
+    $scope.goBack = function(){
+        supersonic.ui.layers.pop();
+    }
+
     $scope.noApprovals = false;
     //$scope.creditScore = 800*FormService.forms.creditForm.income/100000;
     $scope.waitingForApprovals = true;
@@ -41,19 +45,19 @@ angular.module('common').controller('ApplicationStatusController', function($sco
         localStorage.coAppIncome = JSON.stringify($scope.creditformInfo.coAppIncome);
     */
 
-    $scope.localStorageWorking = false;
+    // $scope.localStorageWorking = false;
 
-    if(angular.isDefined(localStorage.totalAmount)){
-        $scope.localStorageWorking = true;
-    }
+    // if(angular.isDefined(localStorage.totalAmount)){
+    //     $scope.localStorageWorking = true;
+    // }
 
-    $scope.totalAmountForContracts = Number(localStorage.totalAmount.replace(/[^0-9\.]+/g,""));
-    $scope.loanAmount = Number(localStorage.loanAmount.replace(/[^0-9\.]+/g,""));
-    $scope.yearInHouse = Number(localStorage.yearInHouse.replace(/[^0-9\.]+/g,""));
-    $scope.ownProperty = localStorage.ownProperty;
-    $scope.yearsOnJob = Number(localStorage.yearsOnJob.replace(/[^0-9\.]+/g,""));
-    $scope.annualIncome = Number(localStorage.annualIncome.replace(/[^0-9\.]+/g,""));
-    $scope.coAppIncome = Number(localStorage.coAppIncome.replace(/[^0-9\.]+/g,""));
+    // $scope.totalAmountForContracts = Number(localStorage.totalAmount.replace(/[^0-9\.]+/g,""));
+    // $scope.loanAmount = Number(localStorage.loanAmount.replace(/[^0-9\.]+/g,""));
+    // $scope.yearInHouse = Number(localStorage.yearInHouse.replace(/[^0-9\.]+/g,""));
+    // $scope.ownProperty = localStorage.ownProperty;
+    // $scope.yearsOnJob = Number(localStorage.yearsOnJob.replace(/[^0-9\.]+/g,""));
+    // $scope.annualIncome = Number(localStorage.annualIncome.replace(/[^0-9\.]+/g,""));
+    // $scope.coAppIncome = Number(localStorage.coAppIncome.replace(/[^0-9\.]+/g,""));
 
     //we will simulate Feldco, Wells Fargo, and Green Sky loan decisions based on the following fields:
         //(it would be good to hear from Uday what a realistic set of requirements from all three banks would be)

@@ -196,28 +196,34 @@ main.supplement section.supplementContent {
       display: inline-block;
       margin: 0 auto;
       width: 48%; }
-      main.supplement section.supplementContent div.input div.applicantdiv input[type=text].signature {
-        margin: 1em 0;
-        height: 1.5em;
-        display: inline-block;
-        padding: 0px;
-        border: none;
-        width: auto;
-        border-bottom: solid 2px black;
-        border-radius: 0px; }
-      main.supplement section.supplementContent div.input div.applicantdiv input[type=text].other {
-        margin: 1em 0;
-        height: 1.5em;
-        display: inline-block;
-        padding: 0px;
-        border: none;
-        width: auto;
-        border-bottom: solid 2px black;
-        border-radius: 0px; }
-      main.supplement section.supplementContent div.input div.applicantdiv span {
-        display: inline-block;
-        font-size: large; }
+      main.supplement section.supplementContent div.input div.applicantdiv div.inputline {
+        margin: 1em 0em;
+        width: 100%; }
+        main.supplement section.supplementContent div.input div.applicantdiv div.inputline input[type=text].signature {
+          height: 1.5em;
+          display: inline-block;
+          padding: 0px;
+          border: none;
+          width: auto;
+          border-bottom: solid 2px black;
+          border-radius: 0px; }
+        main.supplement section.supplementContent div.input div.applicantdiv div.inputline input[type=text].other {
+          nowrap: true;
+          height: 1.5em;
+          display: inline-block;
+          padding: 0px;
+          border: none;
+          width: 9em;
+          border-bottom: solid 2px black;
+          border-radius: 0px; }
+        main.supplement section.supplementContent div.input div.applicantdiv div.inputline span {
+          margin: 0 1em 0 0;
+          display: inline-block;
+          font-size: large; }
 
+main.clientList h2 {
+  text-align: center;
+  margin: 1em auto 0 auto; }
 main.clientList section.clientList {
   padding-top: 30px;
   width: 100%;
