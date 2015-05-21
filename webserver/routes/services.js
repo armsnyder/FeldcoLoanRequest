@@ -15,6 +15,10 @@ var fakeLogin = {
     }
 };
 
+var bankRouteData = {
+    route: ['feldcoFinance', 'wellsFargo', 'greenSky']
+};
+
 // more info at http://expressjs.com/4x/api.html#router
 
 module.exports = function(app) {
@@ -35,7 +39,29 @@ module.exports = function(app) {
         data = req.body;
         res.send();
     });
-    app.get('/button', function(req, res) {
-        res.json({'data': 'hello world'});
+    app.get('/bankRoute', function(req, res) {
+        res.json(bankRouteData);
+    });
+    app.post('/bankRoute', function(req, res) {
+        if ('route' in req.body) {
+            if (Object.prototype.toString.call(req.body['route']) === '[object Array]') {
+                var acceptableValues = true;
+                for (var r in bankRouteData['route']) {
+                    if (req.body['route'].indexOf(bankRouteData['route'][r]) == -1) {
+                        acceptableValues = false;
+                    }
+                }
+                if (acceptableValues) {
+                    bankRouteData['route'] = req.body['route'];
+                    res.status(200).send('OK');
+                } else {
+                    res.status(400).send('Invalid bank names in posted route');
+                }
+            } else {
+                res.status(400).send('Route must be an array');
+            }
+        } else {
+            res.status(400).send('Must be route key in data');
+        }
     });
 };
