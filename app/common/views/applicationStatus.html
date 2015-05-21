@@ -53,9 +53,9 @@
 
 			<div ng-show="noApprovals">
 				<h2>We apologize, but you have not been approved for a loan at this time.</h2>
-				<super-navigate location="common#applicationForm">
-				    <button class="button button-block button-positive">Go back to application form</button>
-				</super-navigate>
+				<div>
+				    <button class="button button-block button-positive" ng-click="goBack()">Go back to application form</button>
+				</div>
 			</div>
 
 		</ul>

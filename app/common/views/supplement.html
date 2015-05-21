@@ -1,14 +1,4 @@
 <main class="supplement" ng-controller="SupplementController">
-<!-- <section class ="pdfView">
-  <object data="/pdf/homework.pdf" type="application/pdf">
-     <embed src="/pdf/homework.pdf" type="application/pdf" />
-   </object>
-</section> -->
-
-  <!-- <section>
-    <iframe  src="http://docs.google.com/gview?url=https://dochub.com/yuxuanhe/VVrWoV/homework.pdf&embedded=true"></iframe>
-  </section> -->
-
   
     <section class="supplementContent">
         <h3>SUPPLEMENT TO CREDIT APPLICATION</h3>
@@ -52,8 +42,8 @@
                 </div>
             </div>
         </div>
-        <super-navigate location="common#applicationForm" ng-if="agree">
-            <button class="button button-block button-positive">Submit</button>
-        </super-navigate>
+        <div>
+            <button class="button button-block button-positive" ng-click = "submit()">Submit</button>
+        </div>
     </section>
 </main>
