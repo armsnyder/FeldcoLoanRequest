@@ -40,7 +40,7 @@ module.exports = function(app) {
         res.send();
     });
     app.get('/bankRoute', function(req, res) {
-        res.json(route);
+        res.json(bankRouteData);
     });
     app.post('/bankRoute', function(req, res) {
         if ('route' in req.body) {
