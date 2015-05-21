@@ -46,8 +46,8 @@ module.exports = function(app) {
         if ('route' in req.body) {
             if (Object.prototype.toString.call(req.body['route']) === '[object Array]') {
                 var acceptableValues = true;
-                for (r in bankRouteData['route']) {
-                    if (!(r in req.body['route'])) {
+                for (var r in bankRouteData['route']) {
+                    if (req.body['route'].indexOf(bankRouteData['route'][r]) == -1) {
                         acceptableValues = false;
                     }
                 }
