@@ -1,21 +1,26 @@
 <main class="supplement" ng-controller="SupplementController">
-  
+
     <section class="supplementContent">
         <h3>SUPPLEMENT TO CREDIT APPLICATION</h3>
         <p>{{supplementContent1}}<span class = "underline">{{supplementContent2}}</span></p>
         <div class = "input">
             <div class = "checkboxdiv">
-                <input type="checkbox" class="checkbox" ng-model="agree"> 
+                <input type="checkbox" class="checkbox" ng-model="agree">
                 <span class="checkboxtext">I agree this supplement</span>
             </div>
-            <div class = "initialdiv">  
+            <div class = "initialdiv">
                 <span>If this is an application for joint credit, initial here:</span>
                 <input class = "initial" type = "text" ng-model="applicant.initial">
                 <input class = "initial" type = "text" ng-model="coApplicant.initial">
             </div>
-            <div class = "applicantdiv">  
+            <div class = "applicantdiv">
                 <div class="inputline">
-                    <span>Signature</span><input class = "signature" type="text" placeholder="" ng-model="applicant.signature">
+                  <div id="signature-pad" class="m-signature-pad">
+                    <div class="m-signature-pad--body">
+                      <canvas></canvas>
+                    </div>
+                  </div>
+                    <span>Sign above</span>
                 </div>
                 <div class="inputline">
                     <span>Date</span><input class = "other" type="text" placeholder="" ng-model="applicant.signDate">
@@ -27,9 +32,14 @@
                     <span>Exp Date</span><input class = "other" type="text" placeholder="" ng-model="applicant.expireDate">
                 </div>
             </div>
-            <div class = "applicantdiv">  
+            <div class = "applicantdiv">
                 <div class="inputline">
-                    <span>Signature</span><input class = "signature" type="text" placeholder="" ng-model="coApplicant.signature">
+                    <div id="signature-pad_2" class="m-signature-pad">
+                      <div class="m-signature-pad--body">
+                        <canvas></canvas>
+                      </div>
+                    </div>
+                    <span>Sign above</span>
                 </div>
                 <div class="inputline">
                     <span>Date</span><input class = "other" type="text" placeholder="" ng-model="coApplicant.signDate">
@@ -42,6 +52,12 @@
                 </div>
             </div>
         </div>
+        
+        <div class="m-signature-pad--footer">
+          <button class="button clear" ng-click="Clear()">Clear</button>
+          <button class="button save" ng-click="Save()">Save</button>
+        </div>
+        <table><tr><td><img id="canvasImg" width="200px"></td><td><img id="canvasImg_2" width="200px"></td></tr></table>
         <div ng-if="agree">
             <button class="button button-block button-positive" ng-click = "submit()">Submit</button>
         </div>
