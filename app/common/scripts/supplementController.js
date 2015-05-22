@@ -13,4 +13,51 @@ angular
             supersonic.ui.layers.replace("applicationForm");
             //supersonic.ui.layers.push(view);
         }
+
+
+				var wrapper = document.getElementById("signature-pad"),
+		    canvas = wrapper.querySelector("canvas"),
+		    signaturePad;
+
+				var wrapper = document.getElementById("signature-pad_2"),
+		    canvas_2 = wrapper.querySelector("canvas"),
+		    signaturePad;
+
+				signaturePad = new SignaturePad(canvas);
+				signaturePad_2 = new SignaturePad(canvas_2);
+
+
+				$scope.Clear = function() {
+				    signaturePad.clear();
+						signaturePad_2.clear();
+				};
+
+				$scope.Save = function() {
+				    if (signaturePad.isEmpty() && signaturePad_2.isEmpty()) {
+				        alert("Please provide signature first.");
+				    } else {
+				        //window.open(signaturePad.toDataURL());
+								// require "base64"
+								// data_uri = "data:image/png;base64,iVBORw0K..."
+								// encoded_image = data_uri.split(",")[1]
+								// decoded_image = Base64.decode64(encoded_image)
+								// File.open("signature.png", "wb") { |f| f.write(decoded_image) }
+
+								var dataURL = canvas.toDataURL();
+								var dataURL_2 = canvas_2.toDataURL();
+
+								// set canvasImg image src to dataURL
+								// so it can be saved as an image
+								document.getElementById('canvasImg').src = dataURL;
+								document.getElementById('canvasImg_2').src = dataURL_2;
+
+								// dataURL = signaturePad.toDataURL().replace('data:image/png;base64,', '');
+								// var data = JSON.stringify(
+								// 									{
+								// 											value: dataURL
+								// 									});
+								// alert(data);
+
+				    }
+				};
 });
