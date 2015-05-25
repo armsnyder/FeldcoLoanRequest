@@ -54,7 +54,7 @@ angular.module('common').controller('ApplicationStatusController', function($sco
     $scope.totalAmountForContracts = Number(localStorage.totalAmount.replace(/[^0-9\.]+/g,""));
     $scope.loanAmount = Number(localStorage.loanAmount.replace(/[^0-9\.]+/g,""));
     $scope.yearInHouse = Number(localStorage.yearInHouse.replace(/[^0-9\.]+/g,""));
-    $scope.ownProperty = localStorage.ownProperty;
+    $scope.property = localStorage.property;
     $scope.yearsOnJob = Number(localStorage.yearsOnJob.replace(/[^0-9\.]+/g,""));
     $scope.annualIncome = Number(localStorage.annualIncome.replace(/[^0-9\.]+/g,""));
     $scope.coAppIncome = Number(localStorage.coAppIncome.replace(/[^0-9\.]+/g,""));
@@ -94,7 +94,7 @@ angular.module('common').controller('ApplicationStatusController', function($sco
         $scope.approvals.feldcoFinance.amount = '$60,000';
         $scope.approvals.feldcoFinance.showFeldco = false;
 
-        if(($scope.totalAmountForContracts > 100000) && ($scope.yearInHouse > 10) && ($scope.ownProperty) && ($scope.yearsOnJob > 20) && ($scope.annualIncome > 200000) && ($scope.coAppIncome > 200000)){
+        if(($scope.totalAmountForContracts > 100000) && ($scope.yearInHouse > 10) && ($scope.property == "primary") && ($scope.yearsOnJob > 20) && ($scope.annualIncome > 200000) && ($scope.coAppIncome > 200000)){
             $scope.approvals.feldcoFinance.showFeldco = true;
         }
 
@@ -112,7 +112,7 @@ angular.module('common').controller('ApplicationStatusController', function($sco
             $scope.approvals.wellsFargo.amount = '$36,000';
             $scope.approvals.wellsFargo.showWellsFargo = false;
 
-            if( ($scope.approvals.feldcoFinance.showFeldco == false) && ($scope.totalAmountForContracts > 50000) && ($scope.yearInHouse > 5) && ($scope.ownProperty) && ($scope.yearsOnJob > 10) && ($scope.annualIncome > 100000) && ($scope.coAppIncome > 100000)){
+            if( ($scope.approvals.feldcoFinance.showFeldco == false) && ($scope.totalAmountForContracts > 50000) && ($scope.yearInHouse > 5) && ($scope.property == "secondhome") && ($scope.yearsOnJob > 10) && ($scope.annualIncome > 100000) && ($scope.coAppIncome > 100000)){
                 $scope.approvals.wellsFargo.showWellsFargo = true;
             }
 

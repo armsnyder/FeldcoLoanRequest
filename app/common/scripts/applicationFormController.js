@@ -10,7 +10,7 @@ angular
         localStorage.totalAmount = JSON.stringify($scope.creditformInfo.totalAmount);
         localStorage.loanAmount = JSON.stringify($scope.creditformInfo.loanAmount);
         localStorage.yearInHouse = JSON.stringify($scope.creditformInfo.yearInHouse);
-        localStorage.ownProperty = JSON.stringify($scope.creditformInfo.property);
+        localStorage.property = $scope.creditformInfo.property;
         localStorage.yearsOnJob = JSON.stringify($scope.creditformInfo.yearsOnJob);
         localStorage.annualIncome = JSON.stringify($scope.creditformInfo.income);
         localStorage.coAppIncome = JSON.stringify($scope.creditformInfo.coAppIncome);
