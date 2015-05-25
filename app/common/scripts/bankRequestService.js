@@ -1,7 +1,7 @@
 angular.module('common').factory('BankRequestService', function($q, $http, supersonic) {
     var factory = {};
 
-    var serverName = 'http://10.0.0.7:3000'; // Change this to your computer IP if testing locally!
+    var serverName = 'http://52.25.134.94:3000'; // Change this to your computer IP if testing locally!
 
     factory.verifyLogin = function(username, password) {
         return $http.post(serverName+'/verifyLogin', {username: username, password: password});
