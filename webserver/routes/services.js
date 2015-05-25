@@ -1,23 +1,44 @@
 // EXAMPLES:
 
-var fakeLogin = {
-    user1: {
+var fakeLogin = [
+    {
         username: 'Tim Smith',
-        password: 'password'
+        password: 'password',
+        clients: [0, 1, 2]
     },
-    user2: {
+    {
         username: 'John Smith',
-        password: 'password'
+        password: 'password',
+        clients: [3, 4, 5, 6]
     },
-    user3: {
+    {
         username: 'Tom Smith',
-        password: 'password'
+        password: 'password',
+        clients: [7, 8]
     },
-    user4: {
+    {
         username: '',
-        password: ''
+        password: '',
+        clients: [9, 10, 11, 12, 13]
     }
-};
+];
+
+var clients = [
+    {id: 0, name: 'Hershel Ohlsen'},
+    {id: 1, name: 'Asia Mccollum'},
+    {id: 2, name: 'Aleida Suddeth'},
+    {id: 3, name: 'Delisa Cannaday'},
+    {id: 4, name: 'Eliza Broaddus'},
+    {id: 5, name: 'Tyrell Kyger'},
+    {id: 6, name: 'Han Klink'},
+    {id: 7, name: 'Damon Elias'},
+    {id: 8, name: 'Reginald Alger'},
+    {id: 9, name: 'Denna Ishmael'},
+    {id: 10, name: 'Aracelis Aslinger'},
+    {id: 11, name: 'Krystin Gooding'},
+    {id: 12, name: 'Evette Noss'},
+    {id: 13, name: 'Lindsey Stabile'}
+];
 
 var bankRouteData = {
     route: ['feldcoFinance', 'wellsFargo', 'greenSky']
@@ -61,7 +82,7 @@ module.exports = function(app) {
                     }
                 }
             }
-            res.json(verified);
+            res.json({verified: verified, salesRep: req.body['username']});
         } else {
             res.status(400).send('Request must contain username and password');
         }
@@ -122,4 +143,32 @@ module.exports = function(app) {
             res.status(400).send('Invalid bank name');
         }
     });
+
+    app.get('/clients/:salesRep?*', function(req, res) {
+        // Dummy logic for client request. We will replace this with CRM
+
+        var salesRep = req.params.salesRep || '';
+        var clientIdList = [];
+        for (var user in fakeLogin) {
+            if (fakeLogin.hasOwnProperty(user)) {
+                var userObject = fakeLogin[user];
+                if (salesRep == userObject['username']) {
+                    clientIdList = userObject['clients'];
+                    break;
+                }
+            }
+        }
+        var clientObjectList = [];
+        for (var i=0; i<clientIdList.length; i++) {
+            for (var j=0; i<clients.length; j++) {
+                if (clients[j]['id'] == clientIdList[i]) {
+                    clientObjectList.push(clients[j]);
+                    break;
+                }
+            }
+        }
+        res.json(clientObjectList);
+    })
+
+
 };

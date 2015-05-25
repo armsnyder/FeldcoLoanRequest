@@ -1,4 +1,4 @@
-angular.module('common').controller('ApplicationStatusController', function($scope, supersonic, BankRequestService, FormService, $http) {
+angular.module('common').controller('ApplicationStatusController', function($scope, supersonic, BankRequestService) {
 
     var routeQueue = [];
     var requestObject = {}; // Object containing data to be sent to the bank API's
