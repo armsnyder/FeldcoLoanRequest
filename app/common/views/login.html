@@ -9,9 +9,9 @@
 		<h1>Feldco Financing Portal</h1>
 		<img src="/img/logo.jpg" />
 		<form>
-			<input type="text" placeholder="username" />
-			<input type="password" placeholder="password" />
-			<input type="submit" onclick="supersonic.ui.initialView.dismiss()" value="Log In" />
+			<input type="text" placeholder="username" ng-model="username"/>
+			<input type="password" placeholder="password" ng-model="password" />
+			<input type="submit" ng-click="submit()" value="Log In" />
 		</form>
 
     

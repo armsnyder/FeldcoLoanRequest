@@ -1,36 +1,19 @@
-angular.module('common').factory('BankRequestService', function($q, supersonic) {
+angular.module('common').factory('BankRequestService', function($q, $http, supersonic) {
     var factory = {};
-    var banks = {
-        // Placeholder bank statistics used in placeholder algorithm
-        internal: {
-            minCreditScore: 700
-        },
-        wellsFargo: {
-            minCreditScore: 650
-        },
-        greenSky: {
-            minCreditScore: 600
-        }
+
+    var serverName = 'http://10.0.0.7:3000'; // Change this to your computer IP if testing locally!
+
+    factory.verifyLogin = function(username, password) {
+        return $http.post(serverName+'/verifyLogin', {username: username, password: password});
     };
-    factory.submitRequest = function(requestObject) {
-        // Placeholder function that takes an object containing form submission data and returns a promise.
-        // requestObject must be a javascript object containing fields for 'bank' and 'creditScore'
-        // A resolved promise comes with a javascript object containing a boolean called 'approved'
-        return $q(function(resolve, reject) {
-            var correctFormat = typeof requestObject == 'object' && 'bank' in requestObject
-                && 'creditScore' in requestObject && requestObject.bank in banks;
-            setTimeout(function() {
-                if (correctFormat) {
-                    if (requestObject.creditScore > banks[requestObject.bank].minCreditScore) {
-                        resolve({approved: true});
-                    } else {
-                        resolve({approved: false});
-                    }
-                } else {
-                    reject('Incorrect request format');
-                }
-            }, 3000);
-        });
+
+    factory.submitRequest = function(bank, requestObject) {
+        return $http.post(serverName+'/bank/'+bank, requestObject);
     };
+
+    factory.getBankRoute = function() {
+        return $http.get(serverName+'/bankRoute');
+    };
+
     return factory;
 });

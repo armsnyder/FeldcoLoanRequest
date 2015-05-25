@@ -1,202 +1,88 @@
-angular.module('common').controller('ApplicationStatusController', function($scope, supersonic, BankRequestService, FormService) {
+angular.module('common').controller('ApplicationStatusController', function($scope, supersonic, BankRequestService, FormService, $http) {
+
+    var routeQueue = [];
+    var requestObject = {}; // Object containing data to be sent to the bank API's
+
+    var init = function() {
+        // First we load the request data (the application form)
+        requestObject = JSON.parse(window.localStorage.getItem('form'));
+        window.localStorage.removeItem('form'); // For security purposes
+
+        // Then we do is query for the correct bank routing
+        BankRequestService.getBankRoute()
+            .success(function(data) {
+                routeQueue = data['route'];
+                sendNextSubmission(); // Send submission to first bank in route
+            })
+            .error(function(data) {
+                supersonic.logger.log('Error while getting route: '+data);
+                // TODO: Handle error
+            });
+    };
+
+    function sendNextSubmission() {
+        // Send an API request to the next route in the queue
+        var bank = routeQueue.shift();
+        if (bank) {
+            $scope.approvals[bank]['waiting'] = true;
+            BankRequestService.submitRequest(bank, requestObject)
+                .success(submissionCallback)
+                .error(function (data) {
+                    supersonic.logger.log('Error while querying bank: ' + data);
+                    // TODO: Handle error
+                })
+        } else {
+            $scope.noApprovals = true;
+            $scope.waitingForApprovals = false;
+        }
+    }
+
+    var submissionCallback = function(data) {
+        // Upon hearing back from a bank, update our scope
+        var bank = data['bank'];
+        $scope.approvals[bank]['waiting'] = false;
+        $scope.approvals[bank]['text'] = data['text'];
+        $scope.approvals[bank]['approved'] = data['approved'];
+        $scope.approvals[bank]['amount'] = data['amount'];
+
+        // If we were not approved, try the next bank in the route
+        if (data['approved']) {
+            $scope.waitingForApprovals = false;
+        } else {
+            sendNextSubmission();
+        }
+    };
+
     $scope.approvals = {
         feldcoFinance: {
-            waiting: true,
+            waiting: false,
             text: 'Declined',
+            approved: false,
             amount: 0,
-            showFeldco: false
+            show: false
         },
         wellsFargo: {
-            waiting: true,
+            waiting: false,
             text: 'Declined',
+            approved: false,
             amount: 0,
-            showWellsFargo: false
+            show: false
         },
         greenSky: {
-            waiting: true,
+            waiting: false,
             text: 'Declined',
+            approved: false,
             amount: 0,
-            showGreenSky: false
+            show: false
         }
     };
 
     $scope.goBack = function(){
         supersonic.ui.layers.pop();
-    }
+    };
 
     $scope.noApprovals = false;
-    //$scope.creditScore = 800*FormService.forms.creditForm.income/100000;
     $scope.waitingForApprovals = true;
 
-    $scope.contactingFeldco = true;
-    $scope.contactingWellsFargo = false;
-    $scope.contactingGreenSky = false;
-
-
-    //Logic for loan decision
-
-    /*
-        localStorage.totalAmount = JSON.stringify($scope.creditformInfo.totalAmount);
-        localStorage.loanAmount = JSON.stringify($scope.creditformInfo.loanAmount);
-        localStorage.yearInHouse = JSON.stringify($scope.creditformInfo.yearInHouse);
-        localStorage.ownProperty = JSON.stringify($scope.creditformInfo.property);
-        localStorage.yearsOnJob = JSON.stringify($scope.creditformInfo.yearsOnJob);
-        localStorage.annualIncome = JSON.stringify($scope.creditformInfo.income);
-        localStorage.coAppIncome = JSON.stringify($scope.creditformInfo.coAppIncome);
-    */
-
-    $scope.localStorageWorking = false;
-
-    if(angular.isDefined(localStorage.totalAmount)){
-        $scope.localStorageWorking = true;
-    }
-
-    $scope.totalAmountForContracts = Number(localStorage.totalAmount.replace(/[^0-9\.]+/g,""));
-    $scope.loanAmount = Number(localStorage.loanAmount.replace(/[^0-9\.]+/g,""));
-    $scope.yearInHouse = Number(localStorage.yearInHouse.replace(/[^0-9\.]+/g,""));
-    $scope.property = localStorage.property;
-    $scope.yearsOnJob = Number(localStorage.yearsOnJob.replace(/[^0-9\.]+/g,""));
-    $scope.annualIncome = Number(localStorage.annualIncome.replace(/[^0-9\.]+/g,""));
-    $scope.coAppIncome = Number(localStorage.coAppIncome.replace(/[^0-9\.]+/g,""));
-    $scope.plan = localStorage.plan;
-    //we will simulate Feldco, Wells Fargo, and Green Sky loan decisions based on the following fields:
-        //(it would be good to hear from Uday what a realistic set of requirements from all three banks would be)
-        //Total Amount for Contracts
-                // >100,000 = feldco
-                // > 50,000 = wells
-                // > 25,000 = green sky
-        //Year in house
-                // >10 = feldco
-                // > 5 = wells
-                // > 2 = green sky
-        //own property
-                // yes = feldco
-                // yes = wells
-                // no = green sky
-        //years on job
-                // >20 = feldco
-                // > 10 = wells
-                // > 2 = green sky
-        //annual income
-                // >200,000 = feldco
-                // >100,000 = wells
-                // > 50,000 = green sky
-        //co-applicant annual income
-                // >200,000 = feldco
-                // > 100,000 = wells
-                // > 50,000 = green sky
-
-
-    setTimeout(function() {
-        $scope.contactingFeldco = false;
-        $scope.approvals.feldcoFinance.waiting = false;
-        $scope.approvals.feldcoFinance.text = 'Approved';
-        $scope.approvals.feldcoFinance.amount = '$60,000';
-        $scope.approvals.feldcoFinance.showFeldco = false;
-
-        if(($scope.property == "primary") && ($scope.plan == "SAC") && ($scope.loanAmount <= 15000)){
-            $scope.approvals.feldcoFinance.showFeldco = true;
-        }
-
-        if($scope.approvals.feldcoFinance.showFeldco){
-            $scope.waitingForApprovals = false;
-        }
-        else{
-            $scope.contactingWellsFargo = true;
-        }
-        supersonic.logger.log(1);
-        setTimeout(function() {
-            $scope.contactingWellsFargo = false;
-            $scope.approvals.wellsFargo.waiting = false;
-            $scope.approvals.wellsFargo.text = 'Approved';
-            $scope.approvals.wellsFargo.amount = '$36,000';
-            $scope.approvals.wellsFargo.showWellsFargo = false;
-
-            if( ($scope.approvals.feldcoFinance.showFeldco == false) && (($scope.property == "secondhome") || ($scope.property == "primary")) && ($scope.loanAmount <= 50000)){
-                $scope.approvals.wellsFargo.showWellsFargo = true;
-            }
-
-            if($scope.approvals.wellsFargo.showWellsFargo){
-                $scope.waitingForApprovals = false;
-            }
-            else{
-                $scope.contactingGreenSky = true;
-            }
-            supersonic.logger.log(2);
-            setTimeout(function() {
-                $scope.contactingGreenSky = false;
-                $scope.approvals.greenSky.waiting = false;
-                $scope.approvals.greenSky.text = 'Approved';
-                $scope.approvals.greenSky.amount = '$12,000';
-                $scope.approvals.greenSky.showGreenSky = false;
-
-                if(($scope.approvals.feldcoFinance.showFeldco == false) && ($scope.approvals.wellsFargo.showWellsFargo == false) && ($scope.loanAmount <= 55000)){
-                    $scope.approvals.greenSky.showGreenSky = true;
-                }
-                if($scope.approvals.greenSky.showGreenSky){
-                    $scope.waitingForApprovals = false;
-                }
-                else{
-                    if (($scope.approvals.feldcoFinance.showFeldco == false) && ($scope.approvals.wellsFargo.showWellsFargo == false)){
-                    $scope.noApprovals = true;
-                    }
-                }
-                $scope.waitingForApprovals = false;
-                supersonic.logger.log(3);
-            }, 2000)
-        }, 2000)
-    }, 3000);
-
-    $scope.init = function() {
-        requestObject = {bank: 'internal', creditScore: $scope.creditScore};
-        BankRequestService.submitRequest(requestObject).then(function(result) {
-            var approved = result.approved;
-            $scope.contactingFeldco = false;
-            if (approved) {
-                $scope.approvals.feldcoFinance.text = 'Approved';
-                $scope.approvals.feldcoFinance.amount = FormService.forms.creditForm.loanAmount;
-                        $scope.approvals.feldcoFinance.showFeldco = true;
-                        $scope.waitingForApprovals = false;
-
-            } else {
-                $scope.contactingWellsFargo = true;
-                $scope.approvals.feldcoFinance.text = 'Declined';
-                requestObject = {bank: 'wellsFargo', creditScore: $scope.creditScore};
-                BankRequestService.submitRequest(requestObject).then(function(result) {
-                    var approved = result.approved;
-                    $scope.contactingWellsFargo = false;
-                    if (approved) {
-                        $scope.approvals.wellsFargo.text = 'Approved';
-                        $scope.approvals.wellsFargo.amount = FormService.forms.creditForm.loanAmount;
-                        $scope.approvals.wellsFargo.showWellsFargo = true;
-                        $scope.waitingForApprovals = false;
-                    } else {
-                        $scope.contactingGreenSky = true;
-                        $scope.approvals.wellsFargo.text = 'Declined';
-                        requestObject = {bank: 'greenSky', creditScore: $scope.creditScore};
-                        BankRequestService.submitRequest(requestObject).then(function(result) {
-                            var approved = result.approved;
-                            $scope.contactingGreenSky = false;
-                            if (approved) {
-                                $scope.approvals.greenSky.text = 'Approved';
-                                $scope.approvals.greenSky.amount = FormService.forms.creditForm.loanAmount;
-                                $scope.approvals.greenSky.showGreenSky = true;
-                                $scope.waitingForApprovals = false;
-                            } else {
-                                $scope.approvals.greenSky.text = 'Declined';
-                                $scope.waitingForApprovals = false;
-                                $scope.noApprovals = true;
-                            }
-                        }, function(reason) {
-                            supersonic.logger.log('Request Error: '+reason);
-                        });
-                    }
-                }, function(reason) {
-                    supersonic.logger.log('Request Error: '+reason);
-                });
-            }
-        }, function(reason) {
-            supersonic.logger.log('Request Error: '+reason);
-        });
-    }
+    setTimeout(init, 2000);
 });
