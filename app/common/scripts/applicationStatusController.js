@@ -58,7 +58,7 @@ angular.module('common').controller('ApplicationStatusController', function($sco
     $scope.yearsOnJob = Number(localStorage.yearsOnJob.replace(/[^0-9\.]+/g,""));
     $scope.annualIncome = Number(localStorage.annualIncome.replace(/[^0-9\.]+/g,""));
     $scope.coAppIncome = Number(localStorage.coAppIncome.replace(/[^0-9\.]+/g,""));
-
+    $scope.plan = localStorage.plan;
     //we will simulate Feldco, Wells Fargo, and Green Sky loan decisions based on the following fields:
         //(it would be good to hear from Uday what a realistic set of requirements from all three banks would be)
         //Total Amount for Contracts
@@ -94,7 +94,7 @@ angular.module('common').controller('ApplicationStatusController', function($sco
         $scope.approvals.feldcoFinance.amount = '$60,000';
         $scope.approvals.feldcoFinance.showFeldco = false;
 
-        if(($scope.totalAmountForContracts > 100000) && ($scope.yearInHouse > 10) && ($scope.property == "primary") && ($scope.yearsOnJob > 20) && ($scope.annualIncome > 200000) && ($scope.coAppIncome > 200000)){
+        if(($scope.property == "primary") && ($scope.plan == "SAC") && ($scope.loanAmount <= 15000)){
             $scope.approvals.feldcoFinance.showFeldco = true;
         }
 
@@ -112,7 +112,7 @@ angular.module('common').controller('ApplicationStatusController', function($sco
             $scope.approvals.wellsFargo.amount = '$36,000';
             $scope.approvals.wellsFargo.showWellsFargo = false;
 
-            if( ($scope.approvals.feldcoFinance.showFeldco == false) && ($scope.totalAmountForContracts > 50000) && ($scope.yearInHouse > 5) && ($scope.property == "secondhome") && ($scope.yearsOnJob > 10) && ($scope.annualIncome > 100000) && ($scope.coAppIncome > 100000)){
+            if( ($scope.approvals.feldcoFinance.showFeldco == false) && (($scope.property == "secondhome") || ($scope.property == "primary")) && ($scope.loanAmount <= 50000)){
                 $scope.approvals.wellsFargo.showWellsFargo = true;
             }
 
@@ -130,7 +130,7 @@ angular.module('common').controller('ApplicationStatusController', function($sco
                 $scope.approvals.greenSky.amount = '$12,000';
                 $scope.approvals.greenSky.showGreenSky = false;
 
-                if(($scope.approvals.feldcoFinance.showFeldco == false) && ($scope.approvals.wellsFargo.showWellsFargo == false) && ($scope.totalAmountForContracts > 25000) && ($scope.yearInHouse > 2) && ($scope.yearsOnJob > 2) && ($scope.annualIncome > 50000) && ($scope.coAppIncome > 50000)){
+                if(($scope.approvals.feldcoFinance.showFeldco == false) && ($scope.approvals.wellsFargo.showWellsFargo == false) && ($scope.loanAmount <= 55000)){
                     $scope.approvals.greenSky.showGreenSky = true;
                 }
                 if($scope.approvals.greenSky.showGreenSky){

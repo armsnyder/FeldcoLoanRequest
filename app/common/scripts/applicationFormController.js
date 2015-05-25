@@ -14,7 +14,7 @@ angular
         localStorage.yearsOnJob = JSON.stringify($scope.creditformInfo.yearsOnJob);
         localStorage.annualIncome = JSON.stringify($scope.creditformInfo.income);
         localStorage.coAppIncome = JSON.stringify($scope.creditformInfo.coAppIncome);
-        
+        localStorage.plan = $scope.creditformInfo.plan;
         view = new supersonic.ui.View("common#applicationStatus");
         // //supersonic.ui.layers.popAll();
         supersonic.ui.layers.push(view);
