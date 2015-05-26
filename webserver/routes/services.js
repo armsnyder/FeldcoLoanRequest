@@ -67,7 +67,8 @@ module.exports = function(app) {
         res.render('index', {title: 'Express'});
         });
 
-    app.post('/verifyLogin', function(req, res) {
+    app.get('/verifyLogin/:data', function(req, res) {
+        req.body = JSON.parse(req.params.data);
 
         //decide here if the req.username matches one of the usernames,
         //and if the req.password matches 'password'
@@ -92,7 +93,8 @@ module.exports = function(app) {
         res.json(bankRouteData);
     });
 
-    app.post('/bankRoute', function(req, res) {
+    app.get('/bankRoute/:data', function(req, res) {
+        req.body = JSON.parse(req.params.data);
         if ('route' in req.body) {
             if (Object.prototype.toString.call(req.body['route']) === '[object Array]') {
                 var acceptableValues = true;
@@ -115,7 +117,8 @@ module.exports = function(app) {
         }
     });
 
-    app.post('/bank/:bankName', function(req, res) {
+    app.get('/bank/:bankName/:data', function(req, res) {
+        req.body = JSON.parse(req.params.data);
         // Dummy logic for a bank API request
 
         var bankName = req.params.bankName;
