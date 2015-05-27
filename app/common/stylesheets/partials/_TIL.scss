@@ -1,9 +1,22 @@
 main.TIL {
+  span.title {
+    border-bottom: 2px solid #000;
+    font-family:arial;
+    font-size: 30px;
+    width:80%;
+    text-align: center;
+    margin-left: 15%;
+  }
   section.input{
-    span {
-      font-size: 18px;
+    margin-top: 40px;
+    span.SalesData{
+      margin-top: 10px;
+      font-family:arial;
+      font-size: 20px;
     }
     form {
+      margin-top: 30px;
+      border: 1px;
       ul{
         li{
           div.inputs{
@@ -16,13 +29,37 @@ main.TIL {
               clear: both;
             }
               input {
-                height: 20px;
                 width: 300px;
                 border: 1px solid #000;
                 float: right;
               }
           }
         }
+      }
+    }
+
+    table {
+      border: 2px solid #000;
+      tr{
+        td{
+          border: 2px solid #000;
+        }
+      }
+      input {
+        border:none;
+        background: lightgreen;
+      }
+    }
+    div.result{
+      margin-top: 5px;
+      input.total{
+        max-width: 30%;
+        background: lightgreen;
+      }
+      input.one{
+        max-width: 30%;
+        float:right;
+        background: lightgreen;
       }
     }
   }
