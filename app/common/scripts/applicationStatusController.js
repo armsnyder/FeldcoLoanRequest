@@ -81,6 +81,11 @@ angular.module('common').controller('ApplicationStatusController', function($sco
         supersonic.ui.layers.pop();
     };
 
+    $scope.TIL = function(){
+        var view = new supersonic.ui.View("common#TIL");
+        supersonic.ui.layers.push(view);
+    };
+
     $scope.noApprovals = false;
     $scope.waitingForApprovals = true;
 
