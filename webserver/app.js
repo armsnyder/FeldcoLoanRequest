@@ -14,10 +14,19 @@ var app = express();
 //var Mongoose = require('mongoose');
 //var db = Mongoose.createConnection('localhost', 'mytestapp');
 
+//CORS middleware
+var allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+};
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
+app.use(allowCrossDomain);
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
