@@ -72,7 +72,10 @@
 		<ul>
 			<li ng-show="approvals.feldcoFinance.showFeldco">
 				<i class="icon super-calculator"></i>
-				<span>TIL Calculations</span>
+				<!-- <span>TIL Calculations</span> -->
+        <super-navigate location="common#TIL">
+          <button class="button button-block">    Go to TIL view  </button>
+        </super-navigate>
 			</li>
 			<li ng-show="approvals.wellsFargo.showWellsFargo">
 				<i class="icon super-document"></i>

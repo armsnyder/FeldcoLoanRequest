@@ -199,4 +199,5 @@ angular.module('common').controller('ApplicationStatusController', function($sco
             supersonic.logger.log('Request Error: '+reason);
         });
     }
+
 });
