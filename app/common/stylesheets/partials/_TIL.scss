@@ -1,9 +1,15 @@
 main.TIL {
+  span.title {
+    font-family:arial;
+    font-size: 30px;
+  }
   section.input{
-    span {
-      font-size: 18px;
+    span.SalesData{
+      font-family:arial;
+      font-size: 20px;
     }
     form {
+      border: 1px;
       ul{
         li{
           div.inputs{
@@ -23,6 +29,15 @@ main.TIL {
               }
           }
         }
+      }
+    }
+    table {
+      border: 3px;
+    }
+    div.result{
+      margin-top: 5px;
+      span.one{
+        float:right;
       }
     }
   }

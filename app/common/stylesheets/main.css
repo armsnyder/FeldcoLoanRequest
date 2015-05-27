@@ -260,20 +260,32 @@ main.clientList section.clientList {
     main.clientList section.clientList ul li:nth-child(5n-1) {
       margin-right: 0; }
 
-main.TIL section.input span {
-  font-size: 18px; }
-main.TIL section.input form ul li div.inputs label {
-  font-size: 18px;
-  height: 20px;
-  width: 200px;
-  margin-left: 10px;
-  text-align: right;
-  clear: both; }
-main.TIL section.input form ul li div.inputs input {
-  height: 20px;
-  width: 300px;
-  border: 1px solid #000;
-  float: right; }
+main.TIL span.title {
+  font-family: arial;
+  font-size: 30px; }
+main.TIL section.input span.SalesData {
+  font-family: arial;
+  font-size: 20px; }
+main.TIL section.input form {
+  border: 1px; }
+  main.TIL section.input form ul li div.inputs label {
+    font-size: 18px;
+    height: 20px;
+    width: 200px;
+    margin-left: 10px;
+    text-align: right;
+    clear: both; }
+  main.TIL section.input form ul li div.inputs input {
+    height: 20px;
+    width: 300px;
+    border: 1px solid #000;
+    float: right; }
+main.TIL section.input table {
+  border: 3px; }
+main.TIL section.input div.result {
+  margin-top: 5px; }
+  main.TIL section.input div.result span.one {
+    float: right; }
 
 /***********
  * Globals *

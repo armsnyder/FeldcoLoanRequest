@@ -3,9 +3,9 @@
 </super-navbar>
 <main class="TIL" ng-controller="TILController">
 {{temp}}</br>
-<span>Feldo Finance Truth in Lending Calculator</span>
+<span class="title">Feldo Finance Truth in Lending Calculator</span>
 <section class = "input">
-  <span class="Sales Data">Input the followig Sales Data: <span>
+  <span class="SalesData">Input the followig Sales Data: <span>
     <form>
 			<ul>
 				<li>
@@ -48,7 +48,7 @@
     <button ng-click = "Calculate">Click here to calculate</button></br>
     <span>Note: Follow the template below to fill out the Truth in Lending Section on the Retail installment Contract</span>
     <span>Truth in Lending Figure below in Green</span>
-    <table border="1">
+    <table>
       <tr>
         <th>BOX 1</th>
         <th>BOX 2</th>
@@ -72,8 +72,8 @@
       </tr>
     </table>
     <div class="result">
-      <span>59 Payments $128</span>
-      <span>1 Payment $64.41</span>
+      <span class="total">59 Payments $128</span>
+      <span class = "one">1 Payment $64.41</span>
     </div>
 
 </section>
