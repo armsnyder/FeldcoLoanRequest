@@ -23,6 +23,17 @@
 					<hr>
 				</li>
 				<li>
+					<label>FINANCING PLAN</label>
+					<div class="inputs">
+						<select ng-model="creditformInfo.plan">
+						  <option value="SAC">Same As Cash</option>
+						  <option value="APR">Fixed Interest Rate</option>
+						  <option value="NIEP">No Interest Equal Payments</option>
+						</select>
+					</div>
+					<hr>
+				</li>
+				<li>
 					<label>BEST CONTACT PHONE</label>
 					<div class="inputs">
 						<input type="text" placeholder="555-555-5555" ng-model="creditformInfo.phoneBest">
@@ -46,11 +57,29 @@
 					<hr>
 				</li>
 				<li>
+					<label>DATE OF BIRTH</label>
+					<div class="inputs">
+						<input type="date" placeholder="1980-05-29" ng-model="creditformInfo.dateOfBirth">
+					</div>
+					<hr>
+				</li>
+				<li>
 					<label>HOME ADDRESS</label>
 					<div class="inputs">
 						<input type="text" placeholder="Street" ng-model="creditformInfo.addressStreet">
 						<input type="text" placeholder="City" ng-model="creditformInfo.addressCity">
 						<input type="text" placeholder="Zip Code" ng-model="creditformInfo.addressZipCode">
+					</div>
+					<hr>
+				</li>
+				<li>
+					<label>SOCIAL SECURITY NUMBER</label>
+					<div class="inputs">
+						<input type="text" placeholder="xxx" ng-model="creditformInfo.socialsecurityPartOne">
+						<a> - </a>
+						<input type="text" placeholder="xx" ng-model="creditformInfo.socialsecurityPartTwo">
+						<a> - </a>
+						<input type="text" placeholder="xxxx" ng-model="creditformInfo.socialsecurityPartThree">
 					</div>
 					<hr>
 				</li>
@@ -62,10 +91,11 @@
 					<hr>
 				</li>
 				<li>
-					<label>OWN PROPERTY</label>
+					<label>PROPERTY TYPE</label>
 					<div class="inputs">
-						<input type="radio" ng-model="creditformInfo.property" ng-value="true" /><span>Yes</span>
-						<input type="radio" ng-model="creditformInfo.property" ng-value="false" /><span>No</span>
+						<input name="app" type="radio" ng-model="creditformInfo.property" value="primaryResidence" /><span>Primary</span>
+						<input name="app" type="radio" ng-model="creditformInfo.property" value="secondHome" /><span>Second Home</span>
+						<input name="app" type="radio" ng-model="creditformInfo.property" value="investmentProperty" /><span>Investment</span>
 					</div>
 					<hr>
 				</li>
@@ -146,10 +176,11 @@
 						<hr>
 					</li>
 					<li>
-						<label>CO-APPLICANT OWN PROPERTY</label>
+						<label>CO-APPLICANT PROPERTY TYPE</label>
 						<div class="inputs">
-						  <input type="radio" ng-model="creditformInfo.coAppProperty" ng-value="true" /><span>Yes</span>
-						  <input type="radio" ng-model="creditformInfo.coAppProperty" ng-value="false" /><span>No</span>
+						  <input name="coapp" type="radio" ng-model="creditformInfo.coAppPropertyPrimary" value="primary" /><span>Primary</span>
+						  <input name="coapp" type="radio" ng-model="creditformInfo.coAppPropertySecondHome" value="secondhome" /><span>Second Home</span>
+						  <input name="coapp" type="radio" ng-model="creditformInfo.coAppPropertyInvestment" value="investment" /><span>Investment</span>
 						</div>
 						<hr>
 					</li>

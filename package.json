@@ -2,9 +2,7 @@
   "name": "FeldcoMultipage",
   "version": "0.0.0",
   "private": true,
-  "dependencies": {
-    "express": "^4.12.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "grunt-steroids": "1.x"
   }

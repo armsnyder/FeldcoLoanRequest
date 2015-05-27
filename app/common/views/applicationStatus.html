@@ -5,6 +5,7 @@
 
 <main class="application-status" ng-controller="ApplicationStatusController">
 
+
 	<!-- <div ng-show"localStorageWorking">
 		<h3>Local storage is working!</h3>
 		<h4>Total amount for contracts:{{totalAmountForContracts}}</h4>
@@ -18,7 +19,7 @@
 	<section class="statuses">
 		<ul>
 
-			<div ng-show="approvals.feldcoFinance.showFeldco">
+			<div ng-show="approvals.feldcoFinance.approved">
 				<li>
 					<h3>Feldco Finance</h3>
 					<div class="bank-waiting" ng-if="approvals.feldcoFinance.waiting"><p>Waiting for response...</p></div>
@@ -29,7 +30,7 @@
 				</li>
 			</div>
 
-			<div ng-show="approvals.wellsFargo.showWellsFargo">
+			<div ng-show="approvals.wellsFargo.approved">
 				<li>
 					<h3>Wells Fargo</h3>
 					<div class="bank-waiting" ng-if="approvals.wellsFargo.waiting"><p>Waiting for response...</p></div>
@@ -40,7 +41,7 @@
 				</li>
 			</div>
 
-			<div ng-show="approvals.greenSky.showGreenSky">
+			<div ng-show="approvals.greenSky.approved">
 				<li>
 					<h3>GreenSky</h3>
 					<div class="bank-waiting" ng-if="approvals.greenSky.waiting"><p>Waiting for response...</p></div>
@@ -65,19 +66,16 @@
 	<section class="tools">
 			<div ng-show="waitingForApprovals">
 				<h3>Waiting for an approval</h3>
-				<h4 ng-show="contactingFeldco">Contacting Feldco...</h4>
-				<h4 ng-show="contactingWellsFargo">Contacting Wells Fargo...</h4>
-				<h4 ng-show="contactingGreenSky">Contacting Green Sky...</h4>
+				<h4 ng-show="approvals.feldcoFinance.waiting">Contacting Feldco...</h4>
+				<h4 ng-show="approvals.wellsFargo.waiting">Contacting Wells Fargo...</h4>
+				<h4 ng-show="approvals.greenSky.waiting">Contacting Green Sky...</h4>
 			</div>
 		<ul>
-			<li ng-show="approvals.feldcoFinance.showFeldco">
+			<li ng-show="approvals.feldcoFinance.approved">
 				<i class="icon super-calculator"></i>
-				<!-- <span>TIL Calculations</span> -->
-        <super-navigate location="common#TIL">
-          <button class="button button-block">    Go to TIL view  </button>
-        </super-navigate>
+				<span>TIL Calculations</span>
 			</li>
-			<li ng-show="approvals.wellsFargo.showWellsFargo">
+			<li ng-show="approvals.wellsFargo.approved">
 				<i class="icon super-document"></i>
 				<span>Promo Templates</span>
 			</li>
