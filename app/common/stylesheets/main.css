@@ -297,6 +297,50 @@ main.settings section.bankroute {
         text-align: center;
         font-size: 3em; }
 
+main.TIL span.title {
+  border-bottom: 2px solid #000;
+  font-family: arial;
+  font-size: 30px;
+  width: 80%;
+  text-align: center;
+  margin-left: 15%; }
+main.TIL section.input {
+  margin-top: 40px; }
+  main.TIL section.input span.SalesData {
+    margin-top: 10px;
+    font-family: arial;
+    font-size: 20px; }
+  main.TIL section.input form {
+    margin-top: 30px;
+    border: 1px; }
+    main.TIL section.input form ul li div.inputs label {
+      font-size: 18px;
+      height: 20px;
+      width: 200px;
+      margin-left: 10px;
+      text-align: right;
+      clear: both; }
+    main.TIL section.input form ul li div.inputs input {
+      width: 300px;
+      border: 1px solid #000;
+      float: right; }
+  main.TIL section.input table {
+    border: 2px solid #000; }
+    main.TIL section.input table tr td {
+      border: 2px solid #000; }
+    main.TIL section.input table input {
+      border: none;
+      background: lightgreen; }
+  main.TIL section.input div.result {
+    margin-top: 5px; }
+    main.TIL section.input div.result input.total {
+      max-width: 30%;
+      background: lightgreen; }
+    main.TIL section.input div.result input.one {
+      max-width: 30%;
+      float: right;
+      background: lightgreen; }
+
 /***********
  * Globals *
  ***********/

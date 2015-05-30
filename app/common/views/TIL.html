@@ -1,0 +1,79 @@
+<super-navbar>
+    <super-navbar-title>Feldco Finance TIL Calculations</super-navbar-title>
+</super-navbar>
+<main class="TIL" ng-controller="TILController">
+<span class="title">Feldo Finance Truth in Lending Calculator</span>
+<section class = "input">
+  <span class="SalesData">Input the followig Sales Data: <span>
+    <form>
+			<ul>
+				<li>
+          <div class="inputs">
+					  <label>Total Sale Price: </label>
+						<input type="text" placeholder="$100" ng-model="TILInfo.totalPrice">
+					</div>
+					<hr>
+				</li>
+				<li>
+          <div class="inputs">
+					  <label>Deposit: </label>
+						<input type="text" placeholder="$10" ng-model="TILInfo.depositAmount">
+					</div>
+					<hr>
+				</li>
+        <li>
+          <div class="inputs">
+					  <label>Amount Financed: </label>
+						<input type="text" placeholder="$90" ng-model="TILInfo.financeAmount">
+					</div>
+					<hr>
+				</li>
+        <li>
+          <div class="inputs">
+					  <label>APR: </label>
+						<input type="text" placeholder="0.2799" ng-model="TILInfo.APRAmount">
+					</div>
+					<hr>
+				</li>
+        <li>
+          <div class="inputs">
+					  <label>Term: </label>
+						<input type="text" placeholder="60 months" ng-model="TILInfo.TermAmount">
+					</div>
+					<hr>
+				</li>
+      </ul>
+    </form>
+    <button class = "button button-block button-positive" ng-click = "Calculate()">Click here to calculate</button></br>
+    <span>Note: Follow the template below to fill out the Truth in Lending Section on the Retail installment Contract</span>
+    <span>Truth in Lending Figure below in Green</span>
+    <table>
+      <tr>
+        <th>BOX 1</th>
+        <th>BOX 2</th>
+        <th>BOX 3</th>
+        <th>BOX 4</th>
+        <th>BOX 5</th>
+      </tr>
+      <tr>
+        <td>ANNUAL PERCENTAGE RATE</br></br>The cost of your credit as a yearly rate.</td>
+        <td>FINANCE CHARGE</br></br>The dollar amount the credit will cost you.</td>
+        <td>AMOUNT FINANCED</br></br>The amount of Credit provided to you or on your behalf.</td>
+        <td>TOTAL OF PAYMENTS</br></br>The Amount you will have paid after you have made allpayment as scheduled</td>
+        <td>TOTAL SALE PRICE</br></br>The total cost of your purchase on credit, including your down payment of </br><input readonly readonly value = "${{box5}}"></td>
+      </tr>
+      <tr>
+        <td><input  readonly value = "${{BOX_1}}"></td>
+        <td><input  readonly value = "${{BOX_2}}"></td>
+        <td><input  readonly value = "${{BOX_3}}"></td>
+        <td><input  readonly value = "${{BOX_4}}"></td>
+        <td><input  readonly value = "${{BOX_5}}"></td>
+      </tr>
+    </table>
+    <div class="result">
+      <input  class="total" readonly value = "59 Payments ${{total}}">
+      <input  class="one" readonly value = "1 Payment ${{one}}">
+    </div>
+
+</section>
+</main>
