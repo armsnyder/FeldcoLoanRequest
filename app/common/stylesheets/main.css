@@ -259,6 +259,43 @@ main.clientList section.clientList {
         background-color: #2D8A3F; }
     main.clientList section.clientList ul li:nth-child(5n-1) {
       margin-right: 0; }
+main.clientList section.adminsettings {
+  margin: 0 auto; }
+  main.clientList section.adminsettings div {
+    width: 50;
+    margin: 0 auto 0 auto; }
+    main.clientList section.adminsettings div input {
+      display: block;
+      margin: 0 auto;
+      width: 250px;
+      border: none;
+      border: 1px solid #dce4e6;
+      border-style: solid solid none solid;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      padding: 8px 0;
+      font-weight: bold;
+      color: #fff;
+      background-color: #378ad0;
+      border-radius: 0 0 3px 3px; }
+
+main.settings section.bankroute {
+  width: 60%;
+  margin: 1em auto 0 auto; }
+  main.settings section.bankroute ul.bankroutelist {
+    margin: 0 auto 1em;
+    border: 3px solid #e8e8e8;
+    text-align: center; }
+    main.settings section.bankroute ul.bankroutelist h2 {
+      width: 90%;
+      margin: 1em auto 1em; }
+    main.settings section.bankroute ul.bankroutelist li {
+      width: 90%;
+      margin: 1em auto;
+      border: 3px solid black; }
+      main.settings section.bankroute ul.bankroutelist li div.listrowcontent {
+        text-align: center;
+        font-size: 3em; }
 
 /***********
  * Globals *
