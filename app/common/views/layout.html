@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="/components/supersonic/css/supersonic.css" />
         <link rel="stylesheet" href="/app/common/stylesheets/main.css" />
         <link rel="import" href="/components/supersonic/components/import.html">
+        <link rel="stylesheet" type="text/css" href="/components/ng-sortable/dist/ng-sortable.min.css">
+        <link rel="stylesheet" type="text/css" href="/components/ng-sortable/dist/ng-sortable.style.min.css">
+
 
         <script src="http://localhost/cordova.js"></script>
         <script src="/components/steroids-js/steroids.js"></script>
@@ -21,6 +24,7 @@
         <script src="/components/angular-pdf-viewer/dist/angular-pdf-viewer.min.js"></script>
         <script src="/components/signature_pad/signature_pad.js"></script>
         <script src="/components/signature_pad/signature_pad.min.js"></script>
+        <script type="text/javascript" src="/components/ng-sortable/dist/ng-sortable.min.js"></script>
 
         <% _.each(yield.modules, function(module) { %>
             <script src="/app/<%= module %>.js"></script>

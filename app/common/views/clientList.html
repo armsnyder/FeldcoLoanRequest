@@ -1,13 +1,9 @@
-<super-navbar>
-    <super-navbar-title>Clients</super-navbar-title>
-</super-navbar>
-
-
-<main class="clientList">  
-
+<main class="clientList" ng-controller="ClientListController">
+    <super-navbar>
+        <super-navbar-title>Clients</super-navbar-title>
+    </super-navbar>  
     <h2>My Clients</h2>
-
-    <section class="clientList" ng-controller="ClientListController">
+    <section class="clientList" >
         <ul>
             <li ng-repeat = "client in clientList" ng-class="{active:$index==selected}" ng-click="selectClient($index)">
                 <div class="client-content">
@@ -15,5 +11,10 @@
                 </div>
             </li>
         </ul>
+    </section>
+    <section class="adminsettings" ng-if="isAdmin">
+        <div>
+            <input type="submit" ng-click="toSettings()" value="Admin Settings" />
+        </div>
     </section>
 </main>

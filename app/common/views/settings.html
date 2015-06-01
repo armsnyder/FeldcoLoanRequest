@@ -1,0 +1,17 @@
+<super-navbar>
+    <super-navbar-title>Settings</super-navbar-title>
+</super-navbar>
+
+
+<main class = "settings" ng-controller="SettingsController">  
+    <section class = "bankroute">
+        <ul class = "bankroutelist" data-as-sortable="dragControlListeners" data-ng-model="banks">
+            <h2>Edit Bank Route Order by Dragging</h2>
+            <li data-ng-repeat="bank in banks" data-as-sortable-item>
+              <div class = "listrowcontent"data-as-sortable-item-handle>{{bank}}</div>
+            </li>
+        </ul>
+    </section>
+</main>
+
+
