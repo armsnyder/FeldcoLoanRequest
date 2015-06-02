@@ -49,7 +49,24 @@ angular
                 }
             );
 
-            BankRequestService.sendPDF(supplementInfo);
+            BankRequestService.sendPDF(supplementInfo)
+            .success(function(response) {
+                if (response.statusCode == 200) {
+                    view = new supersonic.ui.View("common#applicationForm");
+                    view.start("applicationForm").then( function(startedView) {
+                      supersonic.ui.layers.replace(startedView);
+                    });
+                    supersonic.ui.layers.replace("applicationForm");
+
+                } else {
+                    supersonic.logger.log('Something Wrong!');
+                    // TODO: Handle Error
+                }
+            })
+            .error(function(data, status) {
+                supersonic.logger.log('Something Wrong: '+status+' '+data);
+                // TODO: Handle Error
+            });
 
             supersonic.logger.log(supplementInfo);
 
