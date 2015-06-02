@@ -220,6 +220,14 @@ main.supplement section.supplementContent {
           margin: 0 1em 0 0;
           display: inline-block;
           font-size: large; }
+  main.supplement section.supplementContent div.m-signature-pad--footer {
+    margin: 0 auto 1em;
+    width: 50%; }
+    main.supplement section.supplementContent div.m-signature-pad--footer button.button {
+      width: 100%;
+      margin: 0 auto; }
+  main.supplement section.supplementContent div.submit {
+    margin: 0 1em 1em 1em; }
 
 main.clientList h2 {
   text-align: center;

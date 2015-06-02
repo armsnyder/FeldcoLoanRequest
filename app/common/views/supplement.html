@@ -54,11 +54,11 @@
         </div>
         
         <div class="m-signature-pad--footer">
-          <button class="button clear" ng-click="Clear()">Clear</button>
-          <button class="button save" ng-click="Save()">Save</button>
+          <button class="button clear" ng-click="Clear()">Clear Both Signatures</button>
+          <!-- <button class="button save" ng-click="Save()">Save</button> -->
         </div>
-        <table><tr><td><img id="canvasImg" width="200px"></td><td><img id="canvasImg_2" width="200px"></td></tr></table>
-        <div ng-if="agree">
+        <!-- <table><tr><td><img id="canvasImg" width="200px"></td><td><img id="canvasImg_2" width="200px"></td></tr></table> -->
+        <div class="submit" ng-if="agree">
             <button class="button button-block button-positive" ng-click = "submit()">Submit</button>
         </div>
     </section>
