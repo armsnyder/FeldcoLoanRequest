@@ -8,7 +8,6 @@ angular
             obj.signDate = '';
             obj.drivingLicense = '';
             obj.expireDate = '';
-            supersonic.logger.log("inside!");
             return obj;
         }
 
@@ -35,26 +34,18 @@ angular
             supplementInfo.supplementContent2 = $scope.supplementContent2;
             supplementInfo.applicant = $scope.applicant;
             supplementInfo.coApplicant = $scope.coApplicant;
-            var dataURL = signaturePad.toDataURL().replace('data:image/png;base64,', '');
-            var dataURL = dataURL.replace('/', '\/');
-            //supersonic.logger.log(dataURL);
-            supplementInfo.applicant.signature = dataURL;
-            // supplementInfo.applicant.signature = JSON.stringify(
-            //     {
-            //         value: dataURL
-            //     }
-            // );
-            var dataURL_2 = signaturePad_2.toDataURL().replace('data:image/png;base64,', '');
-            var dataURL_2 = dataURL.replace('/', '\/');
-            supplementInfo.coApplicant.signature = dataURL_2;
-            // supplementInfo.coApplicant.signature = JSON.stringify(
-            //     {
-            //         value: dataURL_2
-            //     }
-            // );
 
+            var dataURL = signaturePad.toDataURL().replace('data:image/png;base64,', '');
+            var dataURL = encodeURIComponent(dataURL);
+            supplementInfo.applicant.signature = dataURL;
+            
+            var dataURL_2 = signaturePad_2.toDataURL().replace('data:image/png;base64,', '');
+            var dataURL_2 = encodeURIComponent(dataURL_2);
+            supplementInfo.coApplicant.signature = dataURL_2;
+            
             BankRequestService.sendPDF(supplementInfo)
             .success(function(response) {
+                supersonic.logger.log(response);
                 view = new supersonic.ui.View("common#applicationForm");
                 view.start("applicationForm").then( function(startedView) {
                   supersonic.ui.layers.replace(startedView);
@@ -66,16 +57,6 @@ angular
                 supersonic.logger.log('Something Wrong: '+status+' '+data);
                 // TODO: Handle Error
             });
-
-            supersonic.logger.log(supplementInfo);
-
-            // view = new supersonic.ui.View("common#applicationForm");
-            // view.start("applicationForm").then( function(startedView) {
-            //   supersonic.ui.layers.replace(startedView);
-            // });
-
-            // supersonic.ui.layers.replace("applicationForm");
-            //supersonic.ui.layers.push(view);
         };
 
         $scope.Clear = function() {
