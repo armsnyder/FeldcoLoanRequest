@@ -25,5 +25,9 @@ angular.module('common').factory('BankRequestService', function($q, $http, super
         return $http.get(serverName+'/clients/'+salesRep);
     };
 
+    factory.sendPDF = function(data) {
+        return $http.get(serverName+'/uploadPDF/'+JSON.stringify(data));
+    };
+
     return factory;
 });
