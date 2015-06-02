@@ -188,7 +188,7 @@ module.exports = function(app) {
             } else {
                 res.status(400).send('PDF failed to save: '+err);
             }
-        })
+        });
     });
 
 };
