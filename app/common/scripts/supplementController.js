@@ -30,38 +30,34 @@ angular
         var signaturePad_2 = new SignaturePad(canvas_2);
 
         $scope.submit = function(){
-            supersonic.logger.log("inside!");
             supplementInfo = new Object();
             supplementInfo.supplementContent1 = $scope.supplementContent1;
             supplementInfo.supplementContent2 = $scope.supplementContent2;
             supplementInfo.applicant = $scope.applicant;
             supplementInfo.coApplicant = $scope.coApplicant;
             var dataURL = signaturePad.toDataURL().replace('data:image/png;base64,', '');
-            supplementInfo.applicant.signature = JSON.stringify(
-                {
-                    value: dataURL
-                }
-            );
+            supplementInfo.applicant.signature = dataURL;
+            // supplementInfo.applicant.signature = JSON.stringify(
+            //     {
+            //         value: dataURL
+            //     }
+            // );
             var dataURL_2 = signaturePad_2.toDataURL().replace('data:image/png;base64,', '');
-            supplementInfo.coApplicant.signature = JSON.stringify(
-                {
-                    value: dataURL_2
-                }
-            );
+            supplementInfo.coApplicant.signature = dataURL_2;
+            // supplementInfo.coApplicant.signature = JSON.stringify(
+            //     {
+            //         value: dataURL_2
+            //     }
+            // );
 
             BankRequestService.sendPDF(supplementInfo)
             .success(function(response) {
-                if (response.statusCode == 200) {
-                    view = new supersonic.ui.View("common#applicationForm");
-                    view.start("applicationForm").then( function(startedView) {
-                      supersonic.ui.layers.replace(startedView);
-                    });
-                    supersonic.ui.layers.replace("applicationForm");
-
-                } else {
-                    supersonic.logger.log('Something Wrong!');
-                    // TODO: Handle Error
-                }
+                view = new supersonic.ui.View("common#applicationForm");
+                view.start("applicationForm").then( function(startedView) {
+                  supersonic.ui.layers.replace(startedView);
+                });
+                supersonic.ui.layers.replace("applicationForm");
+    
             })
             .error(function(data, status) {
                 supersonic.logger.log('Something Wrong: '+status+' '+data);
