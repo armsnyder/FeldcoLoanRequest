@@ -1,5 +1,7 @@
 // EXAMPLES:
 
+var PythonShell = require('python-shell');
+
 var fakeLogin = [
     {
         username: 'Tim Smith',
@@ -20,6 +22,11 @@ var fakeLogin = [
         username: '',
         password: '',
         clients: [9, 10, 11, 12, 13]
+    },
+    {
+        username: 'admin',
+        password: 'admin',
+        clients: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
     }
 ];
 
@@ -171,7 +178,17 @@ module.exports = function(app) {
             }
         }
         res.json(clientObjectList);
-    })
+    });
 
+    app.get('/uploadPDF/:data', function(req, res) {
+        var data = req.params.data;
+        PythonShell.run('html2pdf.py', {args: [data], scriptPath: './', pythonOptions: ['-W ignore']}, function(err, results) {
+            if(!err) {
+                res.status(200).send('ok');
+            } else {
+                res.status(400).send('PDF failed to save: '+err);
+            }
+        })
+    });
 
 };

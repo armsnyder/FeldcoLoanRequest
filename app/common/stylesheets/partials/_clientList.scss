@@ -56,4 +56,33 @@ main.clientList{
 
         }
     }
+    section.adminsettings{
+        margin: 0 auto;
+        div{
+            width:50;
+            margin: 0 auto 0 auto;
+            input {
+                display: block;
+                margin: 0 auto;
+                
+                width: 250px;
+                
+                border: none;
+                border: 1px solid #dce4e6;
+                border-style: solid solid none solid;
+
+                -webkit-appearance: none; 
+                -moz-appearance: none;
+
+                padding: 8px 0;
+                font-weight: bold;
+                color: #fff;
+                background-color: #378ad0;
+
+                border-radius: 0 0 3px 3px;
+            
+            }
+        }
+
+    }
 }
