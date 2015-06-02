@@ -79,9 +79,18 @@ main.supplement {
             }
 
         }
+        div.m-signature-pad--footer{
+            margin: 0 auto 1em;
+            width: 50%;
+            button.button{
+                width:100%;
+                margin: 0 auto;
+            }
+        }
+        div.submit{
+            margin: 0 1em 1em 1em;
+        }
     }
-
-
 } 
 
 
