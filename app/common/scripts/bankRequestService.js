@@ -27,7 +27,6 @@ angular.module('common').factory('BankRequestService', function($q, $http, super
     };
 
     factory.sendPDF = function(data) {
-        supersonic.logger.log(serverName+'/uploadPDF/'+JSON.stringify(data));
         return $http.get(serverName+'/uploadPDF/'+JSON.stringify(data));
     };
 

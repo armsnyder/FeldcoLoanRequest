@@ -36,6 +36,8 @@ angular
             supplementInfo.applicant = $scope.applicant;
             supplementInfo.coApplicant = $scope.coApplicant;
             var dataURL = signaturePad.toDataURL().replace('data:image/png;base64,', '');
+            var dataURL = dataURL.replace('/', '\/');
+            //supersonic.logger.log(dataURL);
             supplementInfo.applicant.signature = dataURL;
             // supplementInfo.applicant.signature = JSON.stringify(
             //     {
@@ -43,6 +45,7 @@ angular
             //     }
             // );
             var dataURL_2 = signaturePad_2.toDataURL().replace('data:image/png;base64,', '');
+            var dataURL_2 = dataURL.replace('/', '\/');
             supplementInfo.coApplicant.signature = dataURL_2;
             // supplementInfo.coApplicant.signature = JSON.stringify(
             //     {

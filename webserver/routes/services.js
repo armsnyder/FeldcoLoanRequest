@@ -182,7 +182,6 @@ module.exports = function(app) {
 
     app.get('/uploadPDF/:data', function(req, res) {
         var data = req.params.data;
-        //res.status(200).send('ok');
         PythonShell.run('html2pdf.py', {args: [data], scriptPath: './', pythonOptions: ['-W ignore']}, function(err, results) {
             if(!err) {
                 res.status(200).send('ok');
