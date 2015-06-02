@@ -25,16 +25,15 @@ module.exports =
     location: "common#clientList"
 
   preloads: [
-    {
-      id: "applicationForm"
-      location: "common#applicationForm"
-    },
-    {
-      id: "clientList"
-      location: "common#clientList"
-    },
+#    {
+#      id: "learn-more"
+#      location: "example#learn-more"
+#    }
+#    {
+#      id: "using-the-scanner"
+#      location: "example#using-the-scanner"
+#    }
   ]
-
 
   # drawers:
   #   left:
