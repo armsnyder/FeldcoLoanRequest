@@ -7,3 +7,4 @@ bower_components
 logs/
 .idea/
 config/cloud.json
+.DS_Store
