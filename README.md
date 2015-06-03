@@ -69,7 +69,7 @@ A web page will open containing a QR code that you may scan using the [AppGyver 
 
 [INCOMPLETE]
 
-## Going Forwrd
+## Going Forward
 
 [INCOMPLETE]
 
