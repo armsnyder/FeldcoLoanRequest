@@ -183,16 +183,23 @@ module.exports = function(app) {
 
     app.get('/uploadPDF/:data', function(req, res) {
         var data = req.params.data;
-//        dataObj = JSON.parse(data);
-//
-//        var signature = dataObj.applicant.signature;
-//        signature = new Buffer(signature, 'base64').toString('binary');
-//        fs.writeFile('signature.png', signature);
-//
-//        var signature_2 = dataObj.coApplicant.signature;
-//        signature_2 = new Buffer(signature_2, 'base64').toString('binary');
-//        fs.writeFile('signature_2.png', signature_2);
-//
+        //console.log(data);
+        // dataObj = JSON.parse(data);
+        // //console.log(dataObj);
+        // console.log(dataObj['applicant']['signature']);
+        // //data = JSON.stringify(dataObj);
+
+        // var signature = dataObj.applicant.signature;
+        
+        // var signature1 = dataObj['applicant']['signature'];
+        // res.status(200).send("you want: "+signature1);
+        // signature = new Buffer(signature, 'base64').toString('binary');
+        // fs.writeFile('signature.png', signature);
+
+        // var signature_2 = dataObj.coApplicant.signature;
+        // signature_2 = new Buffer(signature_2, 'base64').toString('binary');
+        // fs.writeFile('signature_2.png', signature_2);
+       
         PythonShell.run('html2pdf.py', {args: [data], scriptPath: './', pythonOptions: ['-W ignore']}, function(err, results) {
             if(!err) {
                 res.status(200).send('ok');
