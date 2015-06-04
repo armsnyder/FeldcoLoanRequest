@@ -7,15 +7,15 @@ angular.module('common').controller('ClientListController', function($scope, sup
         supersonic.logger.log($scope.isAdmin);
         if ($scope.isAdmin){
             
-            //var view = new supersonic.ui.View("common#settings");
-            supersonic.ui.layers.replace('settings');
+            var view = new supersonic.ui.View("common#settings");
+            supersonic.ui.layers.push(view);
         }
     };
 
     $scope.selectClient = function(index){
         $scope.selected = index;
-        //var view = new supersonic.ui.View("common#supplement");
-        supersonic.ui.layers.replace('supplement');
+        var view = new supersonic.ui.View("common#supplement");
+        supersonic.ui.layers.push(view);
     };
 
     BankRequestService.getClientInformation(window.localStorage.getItem('salesRep'))
