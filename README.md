@@ -93,6 +93,8 @@ Here are a list of features that are missing from the application, along with ho
 
 * The app sends all form data to a backend server using an unencrypted http protocol. Since confidential client information is among the form data, we highly recommend securing this connection. This can be accomplished by cutting out the backend server that we developed and sending all communication directly and securely to the Feldco API.
 
+* The app occasionally crashes when changing views if it is run with the Android AppGyver Scanner. However, when deployed, the app works fine.
+
 [INCOMPLETE]
 
 [INCOMPLETE]
