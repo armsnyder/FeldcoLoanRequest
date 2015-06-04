@@ -48,9 +48,9 @@ angular
                 supersonic.logger.log(response);
                 view = new supersonic.ui.View("common#applicationForm");
                 view.start("common#applicationForm").then( function(startedView) {
-                  supersonic.ui.layers.replace(startedView);
+                  supersonic.ui.layers.replace("common#applicationForm");
                 });
-                supersonic.ui.layers.replace("common#applicationForm");
+                //supersonic.ui.layers.replace("common#applicationForm");
     
             })
             .error(function(data, status) {
