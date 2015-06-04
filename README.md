@@ -66,10 +66,7 @@ and search for "ami-1f49702f"
 ##### Option: Hosting at Feldco
 
 1. Copy the webserver/ directory from this repository to the server machine
-2. Navigate to the webserver/ directory and run in Command Line (Windows) or Terminal (OSX):
-```
-npm install -d
-```
+2. Navigate to the webserver/ directory and run in Command Line (Windows) or Terminal (OSX): ```npm install -d```
 3. Start the express server by running ```node.js```, or install a tool like
 [forever](https://github.com/foreverjs/forever) to keep the server running in the background
 
