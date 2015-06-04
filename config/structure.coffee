@@ -21,39 +21,12 @@ module.exports =
 #    }
 #  ]
 
-  rootView:
+  rootView: {
+    id: "clientList"
     location: "common#clientList"
+  }
 
-  preloads: [
-    {
-      id: "applicationForm"
-      location: "common#applicationForm"
-    }
-    {
-      id: "applicationStatus"
-      location: "common#applicationStatus"
-    }
-    {
-      id: "supplement"
-      location: "common#supplement"
-    }
-    {
-      id: "login"
-      location: "common#login"
-    }
-    {
-      id: "settings"
-      location: "common#settings"
-    }
-    {
-      id: "TIL"
-      location: "common#TIL"
-    }
-    {
-      id: "clientList"
-      location: "common#clientList"
-    }
-  ]
+  
 
   # drawers:
   #   left:
