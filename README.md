@@ -69,7 +69,7 @@ A web page will open containing a QR code that you may scan using the [AppGyver 
 
 * Follow these guidelines: http://docs.appgyver.com/tooling/build-service/build-settings/build-settings-for-android/
 * Once you deploy go to the cloud services using this link: https://cloud.appgyver.com
-* Make sure you name your key_store_app and alias the same as you named them when you created them.
+* While in cloud services, when you're configuring the app make sure you name your key_store_app and alias the same as you named them when you created them.
 
 ## Going Forward
 
