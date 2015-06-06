@@ -12,6 +12,7 @@ receive immediate responses from banks without the need for a call center to act
 * The client can see and complete a supplement form
 * The signed supplement form is sent to a backend server and kept as a record
 * The sales representative, with the help of their client, can fill out a bank application form
+* A co-applicant can optionally fill out a secondary application form, and fields like home address are automatically copied from the first applicant
 * The application form information is validated before being sent to banks
 * The completed bank application form is sent to a backend server
 * If the loan is approved by Feldco Finance, the sales representative can view Truth in Lending information
@@ -87,16 +88,16 @@ You may also open an emulator. Instructions for setting up the GenyMotion Androi
 
 ### Code Tour
 
-* __app/common/__: The core mobile app code, in a familiar AngularJS format
-* __config/__: Additional data used by AppGyver Steroids to build the app
-* __webserver/__: The backend server code. This directory completely separate from the mobile application and does not
+* [__app/common/__](https://github.com/eecs394-spr15/FeldcoLoanRequest/tree/master/app/common): The core mobile app code, in a familiar AngularJS format
+* [__config/__](https://github.com/eecs394-spr15/FeldcoLoanRequest/tree/master/config): Additional data used by AppGyver Steroids to build the app
+* [__webserver/__](https://github.com/eecs394-spr15/FeldcoLoanRequest/tree/master/webserver): The backend server code. This directory completely separate from the mobile application and does not
 need to be present for the mobile app to compile. It is intended to be placed either on a machine at Feldco or hosted
 elsewhere.
-* __webserver/public/__: Currently not used. If you decide to write a web application with a user interface on this
+* [__webserver/public/__](https://github.com/eecs394-spr15/FeldcoLoanRequest/tree/master/webserver/public): Currently not used. If you decide to write a web application with a user interface on this
 server, the code will go here.
-* __webserver/routes/__: The restful API that currently stands in place of the Feldco API.
-* __webserver/uploads/supplements/__: Signed supplement forms are uploaded here.
-* __webserver/views/__: Currently not used. If you decide to write a web application with a user interface on this
+* [__webserver/routes/__](https://github.com/eecs394-spr15/FeldcoLoanRequest/tree/master/webserver/routes): The restful API that currently stands in place of the Feldco API.
+* [__webserver/uploads/supplements/__](https://github.com/eecs394-spr15/FeldcoLoanRequest/tree/master/webserver/uploads/supplements): Signed supplement forms are uploaded here.
+* [__webserver/views/__](https://github.com/eecs394-spr15/FeldcoLoanRequest/tree/master/webserver/views): Currently not used. If you decide to write a web application with a user interface on this
 server, the markdown code will go here.
 
 ### Deployment
@@ -112,9 +113,27 @@ Here are a list of features that are missing from the application.
 
 ##### Connecting the sales representative login and client list to the Feldco CRM
 
+There are a couple ways of going about this. Should you choose to continue using our backend server, the calls to your API will go inside the [webserver/routes/services.js](https://github.com/eecs394-spr15/FeldcoLoanRequest/blob/master/webserver/routes/services.js) file. Should you choose to have the app contact your APIs directly, you will modify the [app/commom/scripts/bankRequestService.js](https://github.com/eecs394-spr15/FeldcoLoanRequest/blob/master/app/common/scripts/bankRequestService.js) file.
+
+##### Connecting the submitted application forms to real bank APIs
+
+Similarly, you can do this in the [services.js](https://github.com/eecs394-spr15/FeldcoLoanRequest/blob/master/webserver/routes/services.js) file or the [bankRequestService.js](https://github.com/eecs394-spr15/FeldcoLoanRequest/blob/master/app/common/scripts/bankRequestService.js) file. Code will need to be added to map the form fields to the API request object fields.
+
 ##### Maintaining records of loan applications
 
-##### Connecting the submitted application forms to real bank APIs.
+This could be performed simply by modifying [this function](https://github.com/eecs394-spr15/FeldcoLoanRequest/blob/master/webserver/routes/services.js#L128) in the services.js file. 
+
+##### Automatically populate fields of the application form using client data from CRM
+
+Save the selected client in localstorage, or query the Feldco API in the [application form controller](https://github.com/eecs394-spr15/FeldcoLoanRequest/blob/master/app/common/scripts/applicationFormController.js), and set the form scope variables accordingly.
+
+##### Administrator ability to upload bank promotion templetes
+
+This will likely be done via a web portal accessable from a computer. If you continue to use our backend server, you will be adding new routes and views to the [webserver](https://github.com/eecs394-spr15/FeldcoLoanRequest/tree/master/webserver) folder.
+
+##### Ability to view detailed loan approval information
+
+Add a button to the [application status](https://github.com/eecs394-spr15/FeldcoLoanRequest/blob/master/app/common/views/applicationStatus.html) page, add logic to the [application status controller](https://github.com/eecs394-spr15/FeldcoLoanRequest/blob/master/app/common/scripts/applicationStatusController.js), and create a new view for this information in the [views](https://github.com/eecs394-spr15/FeldcoLoanRequest/tree/master/app/common/views) folder. You will probably want to save the bank API's response in localstorage for access in this new view.
 
 ### Known Issues
 
@@ -122,7 +141,7 @@ Here are a list of features that are missing from the application.
 information is among the form data, we highly recommend securing this connection. This can be accomplished by cutting
 out the backend server that we developed and sending all communication directly and securely to the Feldco API.
 
-* The app occasionally crashes when changing views if it is run with the Android AppGyver Scanner,
+* The app occasionally crashes when changing views if it is run with the Android AppGyver Scanner, which is likely 
 due to [this bug](https://muut.com/i/appgyver/steroids:uncaught-syntaxerror-unexpe). However, when deployed, the app
 works fine.
 
