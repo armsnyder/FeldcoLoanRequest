@@ -109,7 +109,7 @@ you named them when you created them.
 
 ### Missing Features
 
-Here are a list of features that are missing from the application.
+Here is a list of features that are missing from the application, along with our plan to implement them if we had time.
 
 ##### Connecting the sales representative login and client list to the Feldco CRM
 
