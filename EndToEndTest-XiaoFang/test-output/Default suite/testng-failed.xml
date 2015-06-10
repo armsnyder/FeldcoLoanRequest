@@ -5,7 +5,6 @@
     <classes>
       <class name="com.AppiumTest.AppiumTest">
         <methods>
-          <include name="tearDown"/>
           <include name="loginTest"/>
           <include name="setUp"/>
         </methods>

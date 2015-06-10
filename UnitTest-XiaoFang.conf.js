@@ -16,12 +16,13 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
         'bower_components/angular/angular.js',
+        'bower_components/angular-mocks/angular-mocks.js',
         'bower_components/steroids-js/steroids.js',
-        'bower_components/supersonic/supersonic.js',
         'bower_components/webcomponentsjs/webcomponents.js',
         'bower_components/signature_pad/signature_pad.js',
         'bower_components/signature_pad/signature_pad.min.js',
         'bower_components/ng-sortable/dist/ng-sortable.min.js',
+        'bower_components/supersonic/supersonic.js',
         'dist/app/common.js',
         'UnitTest-XiaoFang/SpecFiles/*.js'
     ],

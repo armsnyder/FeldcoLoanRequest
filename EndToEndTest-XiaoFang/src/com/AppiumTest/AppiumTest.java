@@ -1,6 +1,5 @@
 package com.AppiumTest;
 
-import java.io.File;
 import java.net.URL;
 import java.util.*;
 
@@ -16,13 +15,9 @@ public class AppiumTest {
 	
 	@BeforeMethod
 	public void setUp() throws Exception{
-		File classpathRoot = new File(System.getProperty("user.dir")); 
-		File appDir = new File(classpathRoot,"Application");
-		File app = new File(appDir,"FeldcoAdHoc.apk");
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("deviceName", "TestDevice");
-		capabilities.setCapability("app",app.getAbsolutePath());
 		capabilities.setCapability("app-activity", ".RootActivity");
 		driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
 	}
