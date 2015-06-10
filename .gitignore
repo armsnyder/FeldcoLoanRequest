@@ -8,3 +8,4 @@ logs/
 .idea/
 config/cloud.json
 .DS_Store
+EndToEndTest-XiaoFang/test-output/
