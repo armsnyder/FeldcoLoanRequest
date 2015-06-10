@@ -46,11 +46,12 @@ angular
             BankRequestService.sendPDF(supplementInfo)
             .success(function(response) {
                 supersonic.logger.log(response);
-                view = new supersonic.ui.View("common#applicationForm");
-                view.start("common#applicationForm").then( function(startedView) {
-                  supersonic.ui.layers.replace("common#applicationForm");
-                });
+                var view = new supersonic.ui.View("common#applicationForm");
+                // view.start("common#applicationForm").then( function(startedView) {
+                //   supersonic.ui.layers.replace("common#applicationForm");
+                // });
                 //supersonic.ui.layers.replace("common#applicationForm");
+                supersonic.ui.layers.push(view);
     
             })
             .error(function(data, status) {

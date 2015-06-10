@@ -3,7 +3,7 @@ angular.module('common').controller('ApplicationStatusController', function($sco
     var routeQueue = [];
     var requestObject = {}; // Object containing data to be sent to the bank API's
 
-    var init = function() {
+    $scope.init = function() {
         // First we load the request data (the application form)
         requestObject = JSON.parse(window.localStorage.getItem('form'));
         window.localStorage.removeItem('form'); // For security purposes
@@ -89,5 +89,5 @@ angular.module('common').controller('ApplicationStatusController', function($sco
     $scope.noApprovals = false;
     $scope.waitingForApprovals = true;
 
-    setTimeout(init, 2000);
+    setTimeout($scope.init, 2000);
 });

@@ -8,7 +8,7 @@ angular
     $scope.formValidated = false;
 
     $scope.submit = function(form){
-        window.localStorage.setItem('form', JSON.stringify($scope.creditformInfo));
+        //window.localStorage.setItem('form', JSON.stringify($scope.creditformInfo));
         
         if(!($scope.creditformInfo.totalAmount && $scope.creditformInfo.loanAmount && $scope.creditformInfo.plan && $scope.creditformInfo.phoneBest && $scope.creditformInfo.firstName && $scope.creditformInfo.lastName && $scope.creditformInfo.dateOfBirth && $scope.creditformInfo.addressStreet && $scope.creditformInfo.addressCity && $scope.creditformInfo.addressZipCode && $scope.creditformInfo.socialsecurityPartOne && $scope.creditformInfo.socialsecurityPartTwo && $scope.creditformInfo.socialsecurityPartThree && $scope.creditformInfo.yearInHouse && $scope.creditformInfo.property && $scope.creditformInfo.email && $scope.creditformInfo.employerName && $scope.creditformInfo.yearsOnJob && $scope.creditformInfo.income)){
           supersonic.ui.dialog.alert("You are missing one or more form fields.");
@@ -17,6 +17,7 @@ angular
         //  supersonic.ui.dialog.alert("Enter a dollar amount for all fields that require dollars.");
         //}
         else{
+          window.localStorage.setItem('form', JSON.stringify($scope.creditformInfo));
           view = new supersonic.ui.View("common#applicationStatus");
           supersonic.ui.layers.push(view);
         }
