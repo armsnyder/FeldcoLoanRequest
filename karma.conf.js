@@ -20,7 +20,7 @@ module.exports = function(config) {
       'bower_components/supersonic/supersonic.js',
       'bower_components/ng-sortable/dist/ng-sortable.js',
       'app/**/*.js',
-      'test/**/*.js'
+      'test/unit_tests.js'
     ],
 
 
