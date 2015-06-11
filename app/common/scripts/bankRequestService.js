@@ -18,7 +18,7 @@ angular.module('common').factory('BankRequestService', function($q, $http, super
     factory.setBankRoute = function(data) {
         data2Sent = {"route":data};
         supersonic.logger.log('newdata: '+data2Sent);
-        $http.get(serverName+'/bankRoute/'+JSON.stringify(data2Sent));
+        return $http.get(serverName+'/bankRoute/'+JSON.stringify(data2Sent));
     };
 
     factory.getClientInformation = function(salesRep) {
@@ -27,6 +27,10 @@ angular.module('common').factory('BankRequestService', function($q, $http, super
 
     factory.sendPDF = function(data) {
         return $http.get(serverName+'/uploadPDF/'+JSON.stringify(data));
+    };
+
+    factory.getServerName = function() {
+        return serverName;
     };
 
     return factory;
